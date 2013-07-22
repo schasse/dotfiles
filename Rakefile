@@ -4,11 +4,12 @@ require 'erb'
 desc "install the dot files into user's home directory"
 task :install do
   install_oh_my_zsh
+  install_prelude
   switch_to_zsh
   replace_all = false
-  files = Dir['*'] - %w[Rakefile README.rdoc LICENSE oh-my-zsh]
-  files << "oh-my-zsh/custom/plugins/rbates"
-  files << "oh-my-zsh/custom/rbates.zsh-theme"
+  files = Dir['*']
+  files -= %w[Rakefile README.md LICENSE emacs.d]
+  files += Dir['emacs.d/personal/*']
   files.each do |file|
     system %Q{mkdir -p "$HOME/.#{File.dirname(file)}"} if file =~ /\//
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub(/\.erb$/, '')}"))
@@ -86,6 +87,23 @@ def install_oh_my_zsh
       exit
     else
       puts "skipping oh-my-zsh, you will need to change ~/.zshrc"
+    end
+  end
+end
+
+def install_prelude
+  if File.exist?(File.join(ENV['HOME'], ".emacs.d"))
+    puts "found ~/.emacs.d"
+  else
+    print "install prelude to .emacs.d? [ynq] "
+    case $stdin.gets.chomp
+    when 'y'
+      puts "installing prelude"
+      system %Q{git clone https://github.com/bbatsov/prelude.git "$HOME/.emacs.d"}
+    when 'q'
+      exit
+    else
+      puts "skipping prelude"
     end
   end
 end
