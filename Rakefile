@@ -10,6 +10,7 @@ task :install do
   files = Dir['*']
   files -= %w[Rakefile README.md LICENSE emacs.d]
   files += Dir['emacs.d/personal/*']
+  files << 'gconf/apps/gnome-terminal/profiles/Profile0/%gconf.xml'
   files.each do |file|
     system %Q{mkdir -p "$HOME/.#{File.dirname(file)}"} if file =~ /\//
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub(/\.erb$/, '')}"))
