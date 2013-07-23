@@ -10,7 +10,7 @@ task :install do
   files = Dir['*']
   files -= %w[Rakefile README.md LICENSE emacs.d]
   files += Dir['emacs.d/personal/*']
-  files << 'gconf/apps/gnome-terminal/profiles/Profile0/%gconf.xml'
+  files << 'emacs.d/prelude-modules.el'
   files.each do |file|
     system %Q{mkdir -p "$HOME/.#{File.dirname(file)}"} if file =~ /\//
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub(/\.erb$/, '')}"))
@@ -49,9 +49,9 @@ def link_file(file)
     File.open(File.join(ENV['HOME'], ".#{file.sub(/\.erb$/, '')}"), 'w') do |new_file|
       new_file.write ERB.new(File.read(file)).result(binding)
     end
-  elsif file =~ /zshrc$/ # copy zshrc instead of link
-    puts "copying ~/.#{file}"
-    system %Q{cp "$PWD/#{file}" "$HOME/.#{file}"}
+  # elsif file =~ /zshrc$/ # copy zshrc instead of link
+  #   puts "copying ~/.#{file}"
+  #   system %Q{cp "$PWD/#{file}" "$HOME/.#{file}"}
   else
     puts "linking ~/.#{file}"
     system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
