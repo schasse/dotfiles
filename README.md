@@ -1,15 +1,15 @@
 # Schasse Dot Files
 
-Forked from [Ryan Bate's dotfiles](https://github.com/rbates/dotfiles) and changed to my needs.
+Forked from [Ryan Bate's dotfiles](https://github.com/ryanb/dotfiles) and changed to my needs.
 
 See also [Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh) and [Prelude](https://github.com/bbatsov/prelude)
 
 ## Installation
 
-Run the following commands in your terminal. It will prompt you before it does anything destructive. Check out the [Rakefile](https://github.com/schasse/dotfiles/Rakefile) to see exactly what it does.
+Run the following commands in your terminal. It will prompt you before it does anything destructive. Check out the [Rakefile](https://github.com/schasse/dotfiles/blob/master/Rakefile) to see exactly what it does.
 
 ```terminal
-git clone git://github.com/ryanb/dotfiles ~/.dotfiles
+git clone git://github.com/schasse/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 rake install
 ```
