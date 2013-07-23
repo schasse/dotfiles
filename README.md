@@ -1,10 +1,8 @@
 # Schasse Dot Files
 
-Forked from Ryan Bate's dotfiles and changed to my needs.
+Forked from [Ryan Bate's dotfiles](https://github.com/rbates/dotfiles) and changed to my needs.
 
-See also
-[Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh)
-[Prelude](https://github.com/bbatsov/prelude)
+See also [Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh) and [Prelude](https://github.com/bbatsov/prelude)
 
 ## Installation
 
