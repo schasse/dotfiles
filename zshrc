@@ -3,7 +3,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(rails3 git rvm pj)
+plugins=(rails3 git rvm pj tmuxinator)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -15,6 +15,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export MAILGUN_API_KEY="somepassword"
 export TERM=xterm-256color
 export PROJECT_PATHS=~/workspace
+export EDITOR="emacsclient -t -a''"
 
 # aliases
 alias gcan='git commit -an'
@@ -36,7 +37,7 @@ alias m2p='mvn clean package -Dmaven.test.skip=true -Dmaven.javadoc.skip=true'
 alias m2t='mvn test'
 alias m2a='mvn assembly:single'
 
-alias e='emacsclient -t'
+alias e="emacsclient -t -a''"
 alias ec='emacsclient -c &'
-alias vim='emacsclient -t'
-alias vi='emacsclient -t'
+alias vim="emacsclient -t -a''"
+alias vi="emacsclient -t -a''"
