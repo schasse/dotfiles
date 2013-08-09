@@ -28,6 +28,8 @@ alias zc='zeus console'
 alias cdg='cd && cd workspace/gapfish'
 alias cdb='cd && cd workspace/boostify'
 
+alias genctags='ctags-exuberant -f TAGS --extra=-f --languages=-javascript --exclude=.git --exclude=log -e -R . $(rvm gemdir)/gems/'
+
 alias sudo='sudo '
 
 alias m2e='mvn eclipse:clean eclipse:eclipse -DdownloadJavadocs=true -DdownloadSources=true'
