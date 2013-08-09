@@ -23,6 +23,7 @@
 ;; (global-set-key (kbd "C-'") 'uncomment-region)
 ;; (global-set-key (kbd "C-ö") 'hippie-expand)
 (define-key prelude-mode-map (kbd "C-c f") 'projectile-find-file)
+(define-key prelude-mode-map (kbd "C-M-o") 'prelude-smart-open-line-above)
 
 ;; git-gutter
 (require 'git-gutter)
