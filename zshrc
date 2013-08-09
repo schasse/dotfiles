@@ -15,7 +15,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export MAILGUN_API_KEY="somepassword"
 export TERM=xterm-256color
 export PROJECT_PATHS=~/workspace
-export EDITOR="emacsclient -t -a''"
+export EDITOR="emacsclient -t -a ''"
 
 # aliases
 alias gcan='git commit -an'
@@ -37,7 +37,7 @@ alias m2p='mvn clean package -Dmaven.test.skip=true -Dmaven.javadoc.skip=true'
 alias m2t='mvn test'
 alias m2a='mvn assembly:single'
 
-alias e="emacsclient -t -a''"
+alias e="emacsclient -t -a ''"
 alias ec='emacsclient -c &'
-alias vim="emacsclient -t -a''"
-alias vi="emacsclient -t -a''"
+alias vim="emacsclient -t -a ''"
+alias vi="emacsclient -t -a ''"
