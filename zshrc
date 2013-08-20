@@ -3,7 +3,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(rails3 git rvm pj tmuxinator)
+plugins=(rails3 git rvm pj tmuxinator heroku)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -27,6 +27,7 @@ alias ztm='zeus test -f documentation spec/models'
 alias zc='zeus console'
 alias cdg='cd && cd workspace/gapfish'
 alias cdb='cd && cd workspace/boostify'
+alias h='nocorrect heroku'
 
 alias genctags='ctags-exuberant -f TAGS --extra=-f --languages=-javascript --exclude=.git --exclude=log -e -R . $(rvm gemdir)/gems/'
 

@@ -9,6 +9,7 @@
 (setq prelude-guru nil)
 (blink-cursor-mode t)
 (scroll-bar-mode -1)
+(set-display-table-slot standard-display-table 'wrap ?\ )
 
 ;; additional packages
 (prelude-ensure-module-deps '(git-gutter escreen))
