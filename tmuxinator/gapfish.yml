@@ -1,0 +1,24 @@
+name: gapfish
+root: ~/workspace/gapfish
+pre: cdg
+windows:
+  - editor:
+      layout: even-horizontal
+      panes:
+        - e
+        - ggpull
+  - deploy:
+      layout: even-horizontal
+      pre: cd ../gapfish_tmp
+      panes:
+        - e
+        - gcm && ggpull
+        - ssh prod -t 'top'
+  - production:
+      layout: main-vertical
+      panes:
+        - ssh prod -t 'top'
+        - ssh prod -t 'cd;tail -f current/log/delayed_job.log'
+        - cpc
+        -
+  - server: rails s
