@@ -8,11 +8,11 @@
 ;; misc
 (setq prelude-guru nil)
 (blink-cursor-mode t)
-(scroll-bar-mode -1)
+;;(scroll-bar-mode -1)
 (set-display-table-slot standard-display-table 'wrap ?\ )
 
 ;; additional packages
-(prelude-ensure-module-deps '(git-gutter escreen))
+(prelude-require-packages '(git-gutter escreen))
 
 ;; ruby
 (setq ruby-insert-encoding-magic-comment nil)
@@ -25,6 +25,7 @@
 ;; (global-set-key (kbd "C-ö") 'hippie-expand)
 (define-key prelude-mode-map (kbd "C-c f") 'projectile-find-file)
 (define-key prelude-mode-map (kbd "C-M-o") 'prelude-smart-open-line-above)
+(define-key prelude-mode-map (kbd "C-M-j") 'prelude-top-join-line)
 
 ;; git-gutter
 (require 'git-gutter)
