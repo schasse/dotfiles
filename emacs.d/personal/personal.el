@@ -19,6 +19,9 @@
 (setq ruby-deep-indent-paren nil)
 ;; (add-hook 'ruby-mode-hook 'linum-mode)
 
+;; js
+(setq js-indent-level 2)
+
 ;; keybindings
 ;; (global-set-key (kbd "C-#") 'comment-region)
 ;; (global-set-key (kbd "C-'") 'uncomment-region)

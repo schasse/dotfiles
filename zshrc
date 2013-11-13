@@ -19,6 +19,7 @@ export EDITOR="emacsclient -t -a ''"
 
 # aliases
 alias gcan='git commit -an'
+alias be='bundle exec '
 alias cpc='cap production rails:console'
 alias csc='cap staging rails:console'
 alias rt='rspec -f documentation'
@@ -30,8 +31,6 @@ alias cdb='cd && cd workspace/boostify'
 alias h='nocorrect heroku'
 
 alias genctags='ctags-exuberant -f TAGS --extra=-f --languages=-javascript --exclude=.git --exclude=log -e -R . $(rvm gemdir)/gems/'
-
-alias sudo='sudo '
 
 alias m2e='mvn eclipse:clean eclipse:eclipse -DdownloadJavadocs=true -DdownloadSources=true'
 alias m2i='mvn clean install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true'

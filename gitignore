@@ -11,3 +11,6 @@ TAGS
 # Org-mode
 .org-id-locations
 *_archive
+
+# tmux
+tmux-client*
