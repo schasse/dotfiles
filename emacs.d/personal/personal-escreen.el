@@ -74,7 +74,9 @@
 ;; (keyboard-translate ?\C-[ ?\H-[)
 ;; (global-set-key (kbd "H-[") 'escreen-goto-prev-screen)
 (global-set-key (kbd "C-]") 'escreen-goto-next-screen-dim)
-(keyboard-translate ?\C-[ ?\H-[)
-(global-set-key (kbd "H-[") 'escreen-goto-prev-screen-dim)
+;; why did Nguyen use keyboard translate? this mapping did break with prelude
+;; update before 15.11.2013
+;;(keyboard-translate ?\C-[ ?\H-[)
+;;(global-set-key (kbd "H-[") 'escreen-goto-prev-screen-dim)
 
 ;;; personal-escreen.el ends here
