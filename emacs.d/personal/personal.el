@@ -10,6 +10,7 @@
 (blink-cursor-mode t)
 ;;(scroll-bar-mode -1)
 (set-display-table-slot standard-display-table 'wrap ?\ )
+(setq projectile-completion-system 'grizzl)
 
 ;; additional packages
 (prelude-require-packages '(git-gutter escreen))
