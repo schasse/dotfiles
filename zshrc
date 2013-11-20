@@ -1,3 +1,4 @@
+# -*-shell-script-*-
 ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
@@ -18,6 +19,8 @@ export PROJECT_PATHS=~/workspace
 export EDITOR="emacsclient -t -a ''"
 
 # aliases
+alias p='pj '
+
 alias gcan='git commit -an'
 alias be='bundle exec '
 alias cpc='cap production rails:console'
