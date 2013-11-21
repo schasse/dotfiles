@@ -29,6 +29,7 @@
 (define-key prelude-mode-map (kbd "C-c f") 'projectile-find-file)
 (define-key prelude-mode-map (kbd "C-M-o") 'prelude-smart-open-line-above)
 (define-key prelude-mode-map (kbd "C-M-j") 'prelude-top-join-line)
+(define-key prelude-mode-map (kbd "C-M-e") 'er/expand-region)
 
 ;; git-gutter+
 (require 'git-gutter+)

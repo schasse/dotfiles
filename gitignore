@@ -8,6 +8,7 @@ auto-save-list
 tramp
 .\#*
 TAGS
+.projectile
 
 # Org-mode
 .org-id-locations
