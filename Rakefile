@@ -8,8 +8,9 @@ task :install do
   switch_to_zsh
   replace_all = false
   files = Dir['*']
-  files -= %w[Rakefile README.md LICENSE emacs.d]
+  files -= %w[Rakefile README.md LICENSE emacs.d oh-my-zsh]
   files += Dir['emacs.d/personal/*']
+  files += Dir['oh-my-zsh/custom/*']
   files << 'emacs.d/prelude-modules.el'
   files.each do |file|
     system %Q{mkdir -p "$HOME/.#{File.dirname(file)}"} if file =~ /\//
