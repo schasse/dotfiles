@@ -21,7 +21,7 @@ export EDITOR="emacsclient -t -a ''"
 # aliases
 alias p='pj '
 
-alias gcan='git commit -an'
+alias gcan='git commit -a'
 alias be='bundle exec '
 alias cpc='cap production rails:console'
 alias csc='cap staging rails:console'

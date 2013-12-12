@@ -32,7 +32,6 @@
 (define-key prelude-mode-map (kbd "C-M-e") 'er/expand-region)
 
 ;; git-gutter+
-(require 'git-gutter+)
 (global-git-gutter+-mode t)
 
 ;; multi-term
