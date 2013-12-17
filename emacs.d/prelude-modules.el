@@ -1,5 +1,6 @@
 ;;; Uncomment the modules you'd like to use and restart Prelude afterwards
 
+(require 'prelude-ido)
 ;; (require 'prelude-c)
 ;; (require 'prelude-clojure)
 ;; (require 'prelude-coffee)
