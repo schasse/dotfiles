@@ -9,10 +9,10 @@ plugins=(rails git rvm pj tmuxinator autoenv colored-man colorize)
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
-export PATH=$HOME/.rvm/bin:/usr/local/heroku/bin:$HOME/workspace/living-in-a-box/bin:$PATH
+export PATH=$HOME/.rvm/bin:/usr/local/heroku/bin:$HOME/code/living-in-a-box/bin:$PATH
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 export TERM=xterm-256color
-export PROJECT_PATHS=$HOME/workspace
+export PROJECT_PATHS=$HOME/code
 export EDITOR="emacsclient -t -a ''"
 
 # aliases
@@ -29,8 +29,8 @@ alias rt='rspec -f documentation'
 alias zt='zeus test'
 alias ztm='zeus test spec/models'
 alias zc='zeus console'
-alias cdg='cd && cd workspace/gapfish'
-alias cdb='cd && cd workspace/boostify'
+alias cdg='p gapfish'
+alias cdb='p boostify'
 alias h='nocorrect heroku'
 
 alias genctags='ctags-exuberant -f TAGS --extra=-f --languages=-javascript --exclude=.git --exclude=log -e -R . $(rvm gemdir)/gems/'

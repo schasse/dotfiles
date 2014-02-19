@@ -18,10 +18,16 @@
 (setq ruby-insert-encoding-magic-comment nil)
 (setq ruby-deep-indent-paren nil)
 ;; (add-hook 'ruby-mode-hook 'linum-mode)
-(define-key ruby-tools-mode-map (kbd "C-c '") 'ruby-tools-to-single-quote-string)
-(define-key ruby-tools-mode-map (kbd "C-c \"") 'ruby-tools-to-double-quote-string)
-(define-key ruby-tools-mode-map (kbd "C-c :") 'ruby-tools-to-symbol)
-(define-key ruby-tools-mode-map (kbd "C-c ;") 'ruby-tools-clear-string)
+(eval-after-load 'ruby-tools
+  '(progn
+       (define-key ruby-tools-mode-map (kbd "C-c '")
+         'ruby-tools-to-single-quote-string)
+       (define-key ruby-tools-mode-map (kbd "C-c \"")
+         'ruby-tools-to-double-quote-string)
+       (define-key ruby-tools-mode-map (kbd "C-c :")
+         'ruby-tools-to-symbol)
+       (define-key ruby-tools-mode-map (kbd "C-c ;")
+         'ruby-tools-clear-string)))
 
 ;; js
 (setq js-indent-level 2)
