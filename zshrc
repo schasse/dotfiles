@@ -9,7 +9,7 @@ plugins=(rails git rvm pj tmuxinator autoenv colored-man colorize)
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
-export PATH=$HOME/.rvm/bin:/usr/local/heroku/bin:$PATH
+export PATH=$HOME/.rvm/bin:/usr/local/heroku/bin:$HOME/workspace/living-in-a-box/bin:$PATH
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 export TERM=xterm-256color
 export PROJECT_PATHS=$HOME/workspace
@@ -20,12 +20,14 @@ alias p='pj '
 
 alias gca='git commit -a'
 alias gcan='git commit -an'
+alias gsp='g stash && ggpull && g stash pop'
+alias grsp='g reset HEAD~1 && gsp'
 alias be='bundle exec '
 alias cpc='cap production rails:console'
 alias csc='cap staging rails:console'
 alias rt='rspec -f documentation'
-alias zt='zeus test -f documentation'
-alias ztm='zeus test -f documentation spec/models'
+alias zt='zeus test'
+alias ztm='zeus test spec/models'
 alias zc='zeus console'
 alias cdg='cd && cd workspace/gapfish'
 alias cdb='cd && cd workspace/boostify'

@@ -3,7 +3,7 @@
 (require 'prelude-ido)
 ;; (require 'prelude-c)
 ;; (require 'prelude-clojure)
-;; (require 'prelude-coffee)
+(require 'prelude-coffee)
 ;; (require 'prelude-common-lisp)
 (require 'prelude-css)
 (require 'prelude-emacs-lisp)

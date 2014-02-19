@@ -1,20 +1,21 @@
 name: gapfish
+root: ~/
 windows:
   - editor:
       layout: even-horizontal
       panes:
         - pj gapfish && e
         - pj gapfish && ggpull
-  - production:
-      layout: even-horizontal
-      pre: pj gapfish_2
-      panes:
-        - e
-        - gcm && ggpull
-        - ssh prod -t 'top'
   - server:
       layout: even-horizontal
       panes:
         - pj gapfish && zeus start
         - pj gapfish && zeus server
         - top
+  - production:
+      layout: even-horizontal
+      pre: pj gapfish_2
+      panes:
+        -
+        - gcm && ggpull
+        - ssh prod -t 'top'

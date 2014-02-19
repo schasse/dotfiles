@@ -25,6 +25,7 @@
 
 ;; js
 (setq js-indent-level 2)
+(setq coffee-tab-width 2)
 
 ;; keybindings
 ;; (global-set-key (kbd "C-#") 'comment-region)
