@@ -9,6 +9,7 @@ tramp
 .\#*
 TAGS
 .projectile
+backups/
 
 # Org-mode
 .org-id-locations
