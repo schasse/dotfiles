@@ -36,6 +36,9 @@
           (lambda ()
             (subword-mode +1)))
 
+;; sh
+(setq sh-basic-offset 2)
+
 ;; keybindings
 ;; (global-set-key (kbd "C-#") 'comment-region)
 ;; (global-set-key (kbd "C-'") 'uncomment-region)
