@@ -32,6 +32,9 @@
 ;; js
 (setq js-indent-level 2)
 (setq coffee-tab-width 2)
+(add-hook 'coffee-mode-hook
+          (lambda ()
+            (subword-mode +1)))
 
 ;; keybindings
 ;; (global-set-key (kbd "C-#") 'comment-region)
