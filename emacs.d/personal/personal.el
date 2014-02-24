@@ -12,7 +12,7 @@
 (set-display-table-slot standard-display-table 'wrap ?\ )
 
 ;; additional packages
-(prelude-require-packages '(git-gutter+ escreen))
+(prelude-require-packages '(git-gutter+ escreen auto-complete robe))
 
 ;; ruby
 (setq ruby-insert-encoding-magic-comment nil)
@@ -28,6 +28,14 @@
          'ruby-tools-to-symbol)
        (define-key ruby-tools-mode-map (kbd "C-c ;")
          'ruby-tools-clear-string)))
+
+(eval-after-load 'ruby-mode
+  '(progn (add-hook 'ruby-mode-hook 'robe-mode)))
+(eval-after-load 'robe
+  '(progn (add-hook 'robe-mode-hook
+                    (lambda ()
+                      (add-to-list 'ac-sources 'ac-source-robe)
+                      (set-auto-complete-as-completion-at-point-function)))))
 
 ;; js
 (setq js-indent-level 2)
