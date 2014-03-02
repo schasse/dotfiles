@@ -12,7 +12,8 @@
 (set-display-table-slot standard-display-table 'wrap ?\ )
 
 ;; additional packages
-(prelude-require-packages '(git-gutter+ escreen rvm auto-complete robe bundler))
+(prelude-require-packages
+ '(git-gutter+ escreen rvm auto-complete robe bundler rspec))
 
 ;; keybindings
 (define-key prelude-mode-map (kbd "C-c f") 'projectile-find-file)
