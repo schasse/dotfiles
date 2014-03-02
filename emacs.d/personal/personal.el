@@ -12,12 +12,20 @@
 (set-display-table-slot standard-display-table 'wrap ?\ )
 
 ;; additional packages
-(prelude-require-packages '(git-gutter+ escreen))
+(prelude-require-packages '(git-gutter+ escreen rvm auto-complete robe))
+
+;; autocomplete
+(require 'auto-complete-config)
+(ac-config-default)
+(global-auto-complete-mode 'auto-complete)
+(setq ac-trigger-key "M-/")
+(setq ac-use-quick-help nil)
+(setq ac-auto-start nil)
 
 ;; ruby
 (setq ruby-insert-encoding-magic-comment nil)
 (setq ruby-deep-indent-paren nil)
-;; (add-hook 'ruby-mode-hook 'linum-mode)
+
 (eval-after-load 'ruby-tools
   '(progn
        (define-key ruby-tools-mode-map (kbd "C-c '")
@@ -28,6 +36,9 @@
          'ruby-tools-to-symbol)
        (define-key ruby-tools-mode-map (kbd "C-c ;")
          'ruby-tools-clear-string)))
+
+(add-hook 'ruby-mode-hook 'robe-mode)
+(add-hook 'robe-mode-hook 'robe-ac-setup)
 
 ;; js
 (setq js-indent-level 2)
