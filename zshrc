@@ -13,7 +13,7 @@ export PATH=$HOME/.rvm/bin:/usr/local/heroku/bin:$HOME/code/living-in-a-box/bin:
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 export TERM=xterm-256color
 export PROJECT_PATHS=$HOME/code
-export EDITOR="emacsclient -t -a ''"
+export EDITOR="emacsclient --alternate-editor=''"
 
 # aliases
 alias p='pj '
@@ -45,7 +45,12 @@ alias m2p='mvn clean package -Dmaven.test.skip=true -Dmaven.javadoc.skip=true'
 alias m2t='mvn test'
 alias m2a='mvn assembly:single'
 
-alias e="emacsclient -t -a ''"
-alias ec='emacsclient -c &'
-alias vim="emacsclient -t -a ''"
-alias vi="emacsclient -t -a ''"
+alias e="emacsclient --tty --alternate-editor=''"
+alias ec='emacsclient --create-frame &'
+# alias vim="emacsclient --tty --alternate-editor=''"
+# alias vi="emacsclient --tty --alternate-editor=''"
+
+alias ai='sudo apt-get install'
+alias au='sudo apt-get update'
+alias acs='apt-cache search'
+alias ds='dpkg -l | grep '
