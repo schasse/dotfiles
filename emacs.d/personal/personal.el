@@ -26,12 +26,12 @@
 (define-key prelude-mode-map (kbd "C-M-e") 'er/expand-region)
 
 ;; autocomplete
-(require 'auto-complete-config)
-(ac-config-default)
-(global-auto-complete-mode 'auto-complete)
-(setq ac-trigger-key "M-/")
-(setq ac-use-quick-help nil)
-(setq ac-auto-start nil)
+;;(require 'auto-complete-config)
+;;(ac-config-default)
+;;(global-auto-complete-mode 'auto-complete)
+;;(setq ac-trigger-key "M-/")
+;;(setq ac-use-quick-help nil)
+;;(setq ac-auto-start nil)
 
 ;; multi-term
 ;; (setq multi-term-program "/bin/zsh")
@@ -53,8 +53,14 @@
        (define-key ruby-tools-mode-map (kbd "C-c ;")
          'ruby-tools-clear-string)))
 
-(add-hook 'ruby-mode-hook 'robe-mode)
-(add-hook 'robe-mode-hook 'robe-ac-setup)
+;;(add-hook 'ruby-mode-hook 'robe-mode)
+;;(add-hook 'robe-mode-hook 'robe-ac-setup)
+
+;; haml
+(add-hook 'haml-mode-hook
+          (lambda ()
+            (subword-mode +1)))
+
 
 ;; js
 (setq js-indent-level 2)

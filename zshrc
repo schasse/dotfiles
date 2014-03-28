@@ -4,7 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME=schasse
 COMPLETION_WAITING_DOTS=true
 
-plugins=(rails git rvm pj tmuxinator autoenv colored-man colorize)
+plugins=(rails git rvm pj tmuxinator autoenv)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
