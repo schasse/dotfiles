@@ -24,6 +24,13 @@
 (define-key prelude-mode-map (kbd "C-M-o") 'prelude-smart-open-line-above)
 (define-key prelude-mode-map (kbd "C-M-j") 'prelude-top-join-line)
 (define-key prelude-mode-map (kbd "C-M-e") 'er/expand-region)
+(key-chord-define-global "vv" 'rspec-verify-single)
+
+;; auto balance my windows
+(defadvice split-window-right (after restore-balanace-below activate)
+  (balance-windows))
+(defadvice delete-window (after restore-balance activate)
+  (balance-windows))
 
 ;; autocomplete
 ;;(require 'auto-complete-config)

@@ -4,7 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME=schasse
 COMPLETION_WAITING_DOTS=true
 
-plugins=(rails git rvm pj tmuxinator autoenv)
+plugins=(rails git rvm pj tmuxinator autoenv hub)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -25,6 +25,7 @@ alias grsp='g reset HEAD~1 && gsp'
 alias be='bundle exec '
 alias cpc='cap production rails:console'
 alias csc='cap staging rails:console'
+alias csd='cap staging deploy'
 alias rt='rspec -f documentation'
 alias zt='zeus test'
 alias ztm='zeus test spec/models'
