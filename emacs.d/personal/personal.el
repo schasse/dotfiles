@@ -13,7 +13,7 @@
 
 ;; additional packages
 (prelude-require-packages
- '(git-gutter+ escreen rvm auto-complete robe bundler rspec-mode
+ '(git-gutter+ escreen rvm robe bundler rspec-mode
    ido-vertical-mode))
 
 (ido-vertical-mode 1)
@@ -32,19 +32,6 @@
 (defadvice delete-window (after restore-balance activate)
   (balance-windows))
 
-;; autocomplete
-;;(require 'auto-complete-config)
-;;(ac-config-default)
-;;(global-auto-complete-mode 'auto-complete)
-;;(setq ac-trigger-key "M-/")
-;;(setq ac-use-quick-help nil)
-;;(setq ac-auto-start nil)
-
-;; multi-term
-;; (setq multi-term-program "/bin/zsh")
-;; (global-set-key (kbd "C-c T") 'multi-term)
-;; (define-key prelude-mode-map (kbd "C-c t") 'multi-term-next)
-
 ;; ruby
 (setq ruby-insert-encoding-magic-comment nil)
 (setq ruby-deep-indent-paren nil)
@@ -61,7 +48,6 @@
          'ruby-tools-clear-string)))
 
 ;;(add-hook 'ruby-mode-hook 'robe-mode)
-;;(add-hook 'robe-mode-hook 'robe-ac-setup)
 
 ;; haml
 (add-hook 'haml-mode-hook
