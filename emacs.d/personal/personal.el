@@ -75,5 +75,5 @@
 (add-hook 'coffee-mode-hook
           (lambda ()
             (subword-mode +1)))
-(add-to-list 'ac-modes 'coffee-mode)
+;; (add-to-list 'ac-modes 'coffee-mode)
 ;;; personal.el ends here
