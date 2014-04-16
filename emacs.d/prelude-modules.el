@@ -5,6 +5,7 @@
 ;; (require 'prelude-clojure)
 (require 'prelude-coffee)
 ;; (require 'prelude-common-lisp)
+(require 'prelude-company)
 (require 'prelude-css)
 (require 'prelude-emacs-lisp)
 ;; (require 'prelude-erc)
