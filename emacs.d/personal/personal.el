@@ -14,16 +14,20 @@
 ;; additional packages
 (prelude-require-packages
  '(git-gutter+ escreen rvm robe bundler rspec-mode
-   ido-vertical-mode))
+   ido-vertical-mode ess))
 
 (ido-vertical-mode 1)
 (global-git-gutter+-mode t)
+
+;; company (autocompletion)
+(setq company-idle-delay nil)
 
 ;; keybindings
 (define-key prelude-mode-map (kbd "C-c f") 'projectile-find-file)
 (define-key prelude-mode-map (kbd "C-M-o") 'prelude-smart-open-line-above)
 (define-key prelude-mode-map (kbd "C-M-j") 'prelude-top-join-line)
 (define-key prelude-mode-map (kbd "C-M-e") 'er/expand-region)
+(define-key prelude-mode-map (kbd "M-/") 'company-manual-begin)
 (key-chord-define-global "vv" 'rspec-verify-single)
 
 ;; auto balance my windows

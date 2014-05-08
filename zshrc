@@ -22,6 +22,7 @@ alias gca='git commit -a'
 alias gcan='git commit -an'
 alias gsp='g stash && ggpull && g stash pop'
 alias grsp='g reset HEAD~1 && gsp'
+alias ggpushn='ggpush --no-verify'
 alias be='bundle exec '
 alias cpc='cap production rails:console'
 alias csc='cap staging rails:console'
@@ -48,6 +49,7 @@ alias m2a='mvn assembly:single'
 
 alias e="emacsclient --tty --alternate-editor=''"
 alias ec='emacsclient --create-frame &'
+alias eq='emacs -nw -q'
 # alias vim="emacsclient --tty --alternate-editor=''"
 # alias vi="emacsclient --tty --alternate-editor=''"
 
