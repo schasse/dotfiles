@@ -22,6 +22,7 @@ alias gca='git commit -a'
 alias gcan='git commit -an'
 alias gsp='g stash && ggpull && g stash pop'
 alias grsp='g reset HEAD~1 && gsp'
+alias ga='git add --all'
 alias ggpushn='ggpush --no-verify'
 alias be='bundle exec '
 alias cpc='cap production rails:console'
@@ -57,3 +58,5 @@ alias ai='sudo apt-get install'
 alias au='sudo apt-get update'
 alias acs='apt-cache search'
 alias ds='dpkg -l | grep '
+
+alias dsh="SYNC_DOTFILES=1 DOTFILES='.zsh .zshrc .gitconfig .rspec .pry_history .oh-my-zsh .oh-my-zsh/custom/schasse.zsh-theme' dev shell"

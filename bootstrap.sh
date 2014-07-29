@@ -1,7 +1,7 @@
 #!/bin/sh
 
 sudo apt-add-repository "deb http://archive.canonical.com/ubuntu $(lsb_release -sc) partner"
-sudo apt-add-repository "deb http://cran.rstudio.com/bin/linux/ubuntu $(lsb_release -sc)"
+sudo apt-add-repository "deb http://cran.rstudio.com/bin/linux/ubuntu $(lsb_release -sc)/"
 sudo apt-add-repository ppa:alessandro-strada/ppa
 sudo apt-add-repository ppa:cassou/emacs
 sudo apt-add-repository ppa:nesthib/weechat-stable
