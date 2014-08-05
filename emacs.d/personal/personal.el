@@ -12,14 +12,16 @@
 (set-display-table-slot standard-display-table 'wrap ?\ )
 ;; warn when opening files bigger than 50MB
 (setq large-file-warning-threshold 50000000)
+(setq flx-ido-threshhold 2000)
 
 ;; additional packages
 (prelude-require-packages
  '(git-gutter+ escreen rvm robe bundler rspec-mode
-   ido-vertical-mode ess))
+   ido-vertical-mode ess vlf multiple-cursors))
 
 (ido-vertical-mode 1)
 (global-git-gutter+-mode t)
+(add-to-list 'mc/unsupported-minor-modes 'smartparens-mode)
 
 ;; company (autocompletion)
 (setq company-idle-delay nil)
@@ -31,6 +33,10 @@
 (define-key prelude-mode-map (kbd "C-M-e") 'er/expand-region)
 (define-key prelude-mode-map (kbd "M-/") 'company-manual-begin)
 (key-chord-define-global "vv" 'rspec-verify-single)
+;;(global-set-key (kbd "C-M-c C-M-c") 'mc/edit-lines)
+(global-set-key (kbd "C-M-m") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-M-r") 'mc/mark-previous-like-this)
+;;(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 ;; auto balance my windows
 (defadvice split-window-right (after restore-balanace-below activate)
