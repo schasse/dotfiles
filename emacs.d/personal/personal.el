@@ -10,6 +10,8 @@
 (blink-cursor-mode t)
 ;;(scroll-bar-mode -1)
 (set-display-table-slot standard-display-table 'wrap ?\ )
+;; warn when opening files bigger than 50MB
+(setq large-file-warning-threshold 50000000)
 
 ;; additional packages
 (prelude-require-packages
