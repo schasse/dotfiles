@@ -28,6 +28,7 @@ alias be='bundle exec '
 alias cpc='cap production rails:console'
 alias csc='cap staging rails:console'
 alias csd='cap staging deploy'
+alias sd='script/staging_deploy'
 alias rt='rspec -f documentation'
 alias zt='zeus test'
 alias ztm='zeus test spec/models'
@@ -53,6 +54,7 @@ alias ec='emacsclient --create-frame &'
 alias eq='emacs -nw -q'
 # alias vim="emacsclient --tty --alternate-editor=''"
 # alias vi="emacsclient --tty --alternate-editor=''"
+alias ekill="emacsclient -e '(kill-emacs)'"
 
 alias ai='sudo apt-get install'
 alias au='sudo apt-get update'
@@ -60,3 +62,4 @@ alias acs='apt-cache search'
 alias ds='dpkg -l | grep '
 
 alias dsh="SYNC_DOTFILES=1 DOTFILES='.zsh .zshrc .gitconfig .rspec .pry_history .oh-my-zsh .oh-my-zsh/custom/schasse.zsh-theme' dev shell"
+alias cds='cdg && dsh'
