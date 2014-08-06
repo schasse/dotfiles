@@ -27,6 +27,7 @@
 (setq company-idle-delay nil)
 
 ;; keybindings
+(global-set-key [remap other-window] 'nil)
 (define-key prelude-mode-map (kbd "C-c f") 'projectile-find-file)
 (define-key prelude-mode-map (kbd "C-M-o") 'prelude-smart-open-line-above)
 (define-key prelude-mode-map (kbd "C-M-j") 'prelude-top-join-line)
