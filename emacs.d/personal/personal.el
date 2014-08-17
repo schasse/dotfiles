@@ -33,7 +33,8 @@
 (define-key prelude-mode-map (kbd "C-M-j") 'prelude-top-join-line)
 (define-key prelude-mode-map (kbd "C-M-e") 'er/expand-region)
 (define-key prelude-mode-map (kbd "M-/") 'company-manual-begin)
-(key-chord-define-global "vv" 'rspec-verify-single)
+(key-chord-define-global "vv" 'personal-rspec-verify-single)
+(key-chord-define-global "VV" 'personal-tmux-rspec-verify-single)
 ;;(global-set-key (kbd "C-M-c C-M-c") 'mc/edit-lines)
 (global-set-key (kbd "C-M-m") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-M-r") 'mc/mark-previous-like-this)
@@ -75,65 +76,5 @@
           (lambda ()
             (subword-mode +1)))
 ;; (add-to-list 'ac-modes 'coffee-mode)
-
-;; rspec
-(defun my-rspec-verify-single ()
-  "Runs rspec-verify-single command but in tmux"
-  (interactive)
-  (tmux-exec (my-command)))
-
-(defun my-target ()
-  (rspec-runner-target
-   (cons
-    (rspec-spec-file-for (buffer-file-name))
-    (save-restriction
-      (widen)
-      (number-to-string (line-number-at-pos))))))
-
-(defun my-opts ()
-  (rspec-core-options))
-
-(defun my-command ()
-  (mapconcat 'identity `(,(rspec-runner)
-                         ,(rspec-runner-options (my-opts))
-                         ,(my-target)) " "))
-
-(setq tmux-session-name 0)
-(setq tmux-window-name 1)
-(setq tmux-pane-number 1)
-
-(defun tmux-exec (command)
-  "Execute command in tmux pane"
-  (interactive)
-  (shell-command
-   (format "tmux send-keys -t %s:%s.%s '%s' Enter" tmux-session-name tmux-window-name tmux-pane-number command)))
-
-(defun tmux-setup (x y z)
-  "Setup global variables for tmux session, window, and pane"
-  (interactive "sEnter tmux session name: \nsEnter tmux window name: \nsEnter tmux pane number: ")
-  (setq tmux-session-name x)
-  (setq tmux-window-name y)
-  (setq tmux-pane-number z)
-  (message "Tmux Setup, session name: %s, window name: %s, pane number: %s" tmux-session-name tmux-window-name tmux-pane-number))
-
-(defun rspec-compile (target &optional opts)
-  "Override this to enable using tmux. Runs a compile for TARGET with the
-specified options."
-  (setq rspec-last-directory default-directory
-        rspec-last-arguments (list target opts))
-
-  (if rspec-use-rvm
-      (rvm-activate-corresponding-ruby))
-
-  (let ((default-directory (or (rspec-project-root) default-directory))
-        (compilation-scroll-output t))
-    (if rspec-tmux-mode
-        (compile (mapconcat 'identity `(,(rspec-runner)
-                                        ,(rspec-runner-options opts)
-                                        ,target) " ")
-                 'rspec-compilation-mode)
-        (tmux-exec (mapconcat 'identity `(,(rspec-runner)
-                                          ,(rspec-runner-options opts)
-                                          ,target) " ")))))
 
 ;;; personal.el ends here
