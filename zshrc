@@ -63,3 +63,9 @@ alias ds='dpkg -l | grep '
 
 alias dsh="SYNC_DOTFILES=1 DOTFILES='.zsh .zshrc .gitconfig .rspec .pry_history .oh-my-zsh .oh-my-zsh/custom/schasse.zsh-theme' dev shell"
 alias cds='cdg && dsh'
+
+alias -g G='| grep -n'
+alias -g L='| less -R'
+
+alias -s html='xdg-open'
+alias o='xdg-open'
