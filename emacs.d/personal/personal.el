@@ -77,4 +77,8 @@
             (subword-mode +1)))
 ;; (add-to-list 'ac-modes 'coffee-mode)
 
+;; sh
+(setq sh-basic-offset 2)
+(setq sh-indentation 2)
+
 ;;; personal.el ends here
