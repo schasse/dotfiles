@@ -61,4 +61,7 @@ specified options."
                                         ,(rspec-runner-options opts)
                                         ,target) " ")
                  'rspec-compilation-mode))))
+
+(key-chord-define-global "vv" 'personal-rspec-verify-single)
+(key-chord-define-global "VV" 'personal-tmux-rspec-verify-single)
 ;;; personal-tmux-rspec.el ends here
