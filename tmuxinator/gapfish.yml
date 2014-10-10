@@ -9,8 +9,8 @@ windows:
   - server:
       layout: even-horizontal
       panes:
-        - pj gapfish && zeus start
-        - pj gapfish && zeus server
+        - pj gapfish
+        - pj gapfish && bin/rails server
         - top
   - production:
       layout: even-horizontal
