@@ -5,8 +5,8 @@
 
 ;;; Code:
 (setq personal-tmux-rspec-enabled nil)
-(setq personal-tmux-session-name 0)
-(setq personal-tmux-window-name 0)
+(setq personal-tmux-session-name "gapfish")
+(setq personal-tmux-window-name "editor")
 (setq personal-tmux-pane-number 1)
 
 (defun personal-tmux-rspec-verify-single ()

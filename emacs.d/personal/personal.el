@@ -12,7 +12,7 @@
 (set-display-table-slot standard-display-table 'wrap ?\ )
 ;; warn when opening files bigger than 50MB
 (setq large-file-warning-threshold 50000000)
-(setq flx-ido-threshhold 2000)
+(setq flx-ido-threshhold 1000)
 
 ;; additional packages
 (prelude-require-packages
