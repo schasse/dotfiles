@@ -18,3 +18,7 @@ backups/
 
 # tmux
 tmux-client*
+
+# Environment files that may contain sensitive data
+.env
+.powenv
