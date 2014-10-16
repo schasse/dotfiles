@@ -6,13 +6,12 @@ sudo apt-add-repository ppa:nesthib/weechat-stable
 
 sudo apt-get update
 
-sudo apt-get -y install \
+sudo apt-get install \
   curl \
   default-jre \
   emacs24 \
   exuberant-ctags \
   git \
-  gnome-tweak-tool \
   iotop \
   docker.io \
   lynx \
@@ -33,6 +32,7 @@ if [[ -n $DISPLAY ]]; then
   sudo apt-get install \
     account-plugin-irc \
     chromium-browser \
+    gnome-tweak-tool \
     gparted \
     inkscape \
     mixxx \
