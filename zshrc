@@ -69,3 +69,6 @@ alias -g L='| less -R'
 
 alias -s html='xdg-open'
 alias o='xdg-open'
+
+#THIS MUST BE AT THE END OF THE FILE FOR JENV TO WORK!!!
+[[ -s "/home/sebastian/.jenv/bin/jenv-init.sh" ]] && source "/home/sebastian/.jenv/bin/jenv-init.sh" && source "/home/sebastian/.jenv/commands/completion.sh"
