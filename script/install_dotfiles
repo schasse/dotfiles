@@ -1,8 +1,10 @@
+#!/usr/bin/env ruby
+
 require 'rake'
 require 'erb'
 
-desc "install the dot files into user's home directory"
-task :install do
+# install the dot files into user's home directory
+def install_dotfiles
   install_oh_my_zsh
   install_prelude
   switch_to_zsh
@@ -119,3 +121,5 @@ class FileHandler < Struct.new(:from_file, :replace_all)
     end
   end
 end
+
+install_dotfiles

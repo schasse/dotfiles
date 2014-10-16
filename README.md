@@ -1,6 +1,6 @@
 # Schasse Dot Files
 
-Forked from [Ryan Bate's dotfiles](https://github.com/ryanb/dotfiles) and changed to my needs.
+Forked from [Ryan Bates' dotfiles](https://github.com/ryanb/dotfiles) and changed to my needs.
 
 See also [Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh) and [Prelude](https://github.com/bbatsov/prelude)
 
@@ -11,7 +11,8 @@ Run the following commands in your terminal. It will prompt you before it does a
 ```terminal
 git clone git://github.com/schasse/dotfiles ~/.dotfiles
 cd ~/.dotfiles
-rake install
+scrip/install_packages
+scrip/install_dotfiles
 ```
 
 ## Uninstall
