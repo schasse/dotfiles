@@ -105,19 +105,19 @@ class FileHandler < Struct.new(:from_file, :replace_all)
   end
 
   def replace_file
-    system %Q{rm -rf "$HOME/.#{to_file}"}
+    system %Q{rm -rf "$HOME/#{to_file}"}
     link_file
   end
 
   def link_file
     if from_file =~ /.erb$/
-      puts "generating ~/.#{to_file}"
-      File.open(File.join(ENV['HOME'], ".#{to_file}"), 'w') do |new_file|
+      puts "generating ~/#{to_file}"
+      File.open(File.join(ENV['HOME'], "#{to_file}"), 'w') do |new_file|
         new_file.write ERB.new(File.read.result(binding))
       end
     else
-      puts "linking ~/.#{to_file}"
-      system %Q{ln -s "$PWD/#{from_file}" "$HOME/.#{to_file}"}
+      puts "linking ~/#{to_file}"
+      system %Q{ln -s "$PWD/#{from_file}" "$HOME/#{to_file}"}
     end
   end
 end
