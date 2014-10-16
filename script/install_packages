@@ -14,7 +14,7 @@ sudo apt-get -y install \
   git \
   gnome-tweak-tool \
   iotop \
-  lxc-docker \
+  docker.io \
   lynx \
   nmap \
   p7zip-full \
