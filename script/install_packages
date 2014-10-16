@@ -6,33 +6,38 @@ sudo apt-add-repository ppa:nesthib/weechat-stable
 
 sudo apt-get update
 
-sudo apt-get install \
-  account-plugin-irc \
-  chromium-browser \
+sudo apt-get -y install \
   curl \
   default-jre \
   emacs24 \
   exuberant-ctags \
   git \
   gnome-tweak-tool \
-  gparted \
-  inkscape \
   iotop \
   lxc-docker \
   lynx \
-  mixxx \
-  mplayer \
-  network-manager-openconnect-gnome \
   nmap \
   p7zip-full \
   pwgen \
   ruby2.0 \
-  skype \
   tmux \
   traceroute \
   tree \
   unclutter \
-  vlc \
   weechat \
   whois \
   xclip
+
+# if there is a graphical environment
+if [[ -n $DISPLAY ]]; then
+  sudo apt-get install \
+    account-plugin-irc \
+    chromium-browser \
+    gparted \
+    inkscape \
+    mixxx \
+    mplayer \
+    network-manager-openconnect-gnome \
+    skype \
+    vlc
+fi
