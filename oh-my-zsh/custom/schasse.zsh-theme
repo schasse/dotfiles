@@ -1,13 +1,13 @@
 server_name() {
   if [[ -n $SSH_CONNECTION ]]; then
-    echo '%m '
+    echo '%m:'
   else
     echo ''
   fi
 }
 
 local ret_status="%(?:%{$fg_bold[red]%}➜ :%{$fg_bold[red]%}❊ ➜ %s)"
-PROMPT='%{$fg_no_bold[red]%}$(server_name)${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}$(server_name)%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
 RPROMPT='%{$fg[yellow]%}$(rvm-prompt v p g)%{$reset_color%}'
 
