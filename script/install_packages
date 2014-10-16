@@ -25,7 +25,8 @@ sudo apt-get install \
   unclutter \
   weechat \
   whois \
-  xclip
+  xclip \
+  zsh
 
 # if there is a graphical environment
 if [[ -n $DISPLAY ]]; then
