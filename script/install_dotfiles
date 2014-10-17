@@ -73,7 +73,7 @@ end
 
 class FileHandler < Struct.new(:from_file, :replace_all)
   def handle
-    system %Q{mkdir -p "$HOME/.#{File.dirname(to_file)}"} if from_file =~ /\//
+    system %Q{mkdir -p "$HOME/#{File.dirname(to_file)}"} if from_file =~ /\//
     if File.exist?(File.join(ENV['HOME'], "#{to_file}"))
       if File.identical? from_file, File.join(ENV['HOME'], "#{to_file}")
         puts "identical ~/#{to_file}"
