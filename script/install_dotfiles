@@ -17,7 +17,7 @@ def install_dotfiles
 end
 
 def files
-  Dir['symlinked/**/*'] - %w[symlinked/emacs.d symlinked/oh-my-zsh]
+  Dir['symlinked/**/*'].select { |file| not File.directory? file }
 end
 
 def switch_to_zsh
@@ -46,6 +46,8 @@ def install_oh_my_zsh
     when 'y'
       puts 'installing oh-my-zsh'
       system %Q{git clone https://github.com/robbyrussell/oh-my-zsh.git "$HOME/.oh-my-zsh"}
+      system %Q{git remote add schasse git@github.com:schasse/oh-my-zsh.git}
+      system %Q{git pull schasse master}
     when 'q'
       exit
     else
