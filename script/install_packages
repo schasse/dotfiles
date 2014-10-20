@@ -32,6 +32,7 @@ sudo apt-get install \
 if [[ -n $DISPLAY ]]; then
   sudo apt-get install \
     account-plugin-irc \
+    backintime-gnome \
     chromium-browser \
     gnome-tweak-tool \
     gparted \
