@@ -1,7 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
 # this script will be triggered by
 # my adjustion of .oh-my-zsh/tools/check_for_upgrade.sh
+
+_git_dirty() {
+  echo $(command git status -s --untracked-files=no | tail -n1)
+}
 
 _fail_upgrade() {
   printf '\033[0;31m%s\033[0m\n' 'There was an error updating. Try again later?'
@@ -10,8 +14,8 @@ _fail_upgrade() {
 
 # upgrade system
 printf '\033[0;34m%s\033[0m\n' "Upgrading system"
-sudo apt-get update
-sudo apt-get upgrade
+# sudo apt-get update
+# sudo apt-get upgrade
 
 # upgrade oh-my-zsh (copied from ~/.oh-my-zsh/tools/upgrade.sh)
 printf '\033[0;34m%s\033[0m\n' "Upgrading Oh My Zsh"
@@ -43,8 +47,19 @@ fi
 # upgrade prelude
 printf '\033[0;34m%s\033[0m\n' "Upgrading Prelude"
 cd ~/.emacs.d
+
+git_was_dirty=$(_git_dirty)
+
+if [[ -n ${git_was_dirty} ]]; then
+  git add . && git stash save
+fi
+
 if git pull --rebase --stat origin master; then
   printf '\033[0;34m%s\033[0m\n' 'Prelude has been updated and/or is at the current version.'
 else
   _fail_upgrade
+fi
+
+if [[ -n ${git_was_dirty} ]]; then
+  git stash pop
 fi
