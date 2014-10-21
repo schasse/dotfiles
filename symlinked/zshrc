@@ -9,6 +9,9 @@ plugins=(rails git rvm pj tmuxinator autoenv hub)
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
+# make less more friendly for non-text input files, see lesspipe(1)
+[[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
+
 export PATH=$HOME/.rvm/bin:/usr/local/heroku/bin:$HOME/code/living-in-a-box/bin:/usr/local/heroku/bin:$PATH
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 export TERM=xterm-256color
