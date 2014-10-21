@@ -9,30 +9,6 @@ plugins=(rails git rvm pj tmuxinator autoenv hub)
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
-
-export PATH=$HOME/.rvm/bin:/usr/local/heroku/bin:$HOME/code/living-in-a-box/bin:/usr/local/heroku/bin:$PATH
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
-export TERM=xterm-256color
-export PROJECT_PATHS=$HOME/code
-export EDITOR="emacsclient --alternate-editor=''"
-
-export LANG="en_US.UTF-8"
-export LANGUAGE="en_US:en"
-export LC_CTYPE="en_US.UTF-8"
-export LC_NUMERIC="en_US.UTF-8"
-export LC_TIME="en_US.UTF-8"
-export LC_COLLATE="en_US.UTF-8"
-export LC_MONETARY="en_US.UTF-8"
-export LC_MESSAGES="en_US.UTF-8"
-export LC_PAPER="en_US.UTF-8"
-export LC_NAME="en_US.UTF-8"
-export LC_ADDRESS="en_US.UTF-8"
-export LC_TELEPHONE="en_US.UTF-8"
-export LC_MEASUREMENT="en_US.UTF-8"
-export LC_IDENTIFICATION="en_US.UTF-8"
-
 # aliases
 alias p='pj '
 
@@ -88,5 +64,6 @@ alias -g L='| less -R'
 alias -s html='xdg-open'
 alias o='xdg-open'
 
-#THIS MUST BE AT THE END OF THE FILE FOR JENV TO WORK!!!
-[[ -s "/home/sebastian/.jenv/bin/jenv-init.sh" ]] && source "/home/sebastian/.jenv/bin/jenv-init.sh" && source "/home/sebastian/.jenv/commands/completion.sh"
+[[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
+[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+[[ -s $HOME/.jenv/bin/jenv-init.sh ]] && source $HOME/.jenv/bin/jenv-init.sh && source $HOME/.jenv/commands/completion.sh
