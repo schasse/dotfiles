@@ -28,10 +28,12 @@ update_with_git() {
   fi
 }
 
-# upgrade system
-printf '\033[0;34m%s\033[0m\n' 'Upgrading system'
-sudo apt-get update
-sudo apt-get upgrade
+# upgrade system if no gui
+if [[ -n "${DISPLAY}" ]]; then
+  printf '\033[0;34m%s\033[0m\n' 'Upgrading system'
+  sudo apt-get update
+  sudo apt-get upgrade
+fi
 
 # upgrade oh-my-zsh (copied from ~/.oh-my-zsh/tools/upgrade.sh)
 printf '\033[0;34m%s\033[0m\n' 'Upgrading Oh My Zsh'

@@ -1,10 +1,12 @@
 #!/bin/bash
 
 sudo apt-add-repository "deb http://archive.canonical.com/ubuntu $(lsb_release -sc) partner"
-sudo apt-add-repository ppa:cassou/emacs
-sudo apt-add-repository ppa:nesthib/weechat-stable
+sudo apt-add-repository 'ppa:cassou/emacs'
+sudo apt-add-repository 'ppa:nesthib/weechat-stable'
 sudo add-apt-repository 'deb https://get.docker.com/ubuntu docker main'
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
+sudo apt-key adv \
+  --keyserver 'hkp://keyserver.ubuntu.com:80' \
+  --recv-keys '36A1D7869245C8950F966E92D8576A8BA88D21E9'
 
 sudo apt-get update
 
@@ -31,7 +33,7 @@ sudo apt-get install \
   zsh
 
 # if there is a graphical environment
-if [[ -n $DISPLAY ]]; then
+if [[ -n "${DISPLAY}" ]]; then
   sudo apt-get install \
     account-plugin-irc \
     backintime-gnome \
