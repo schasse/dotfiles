@@ -1,4 +1,5 @@
-export PATH=$HOME/.rvm/bin:/usr/local/heroku/bin:$HOME/code/living-in-a-box/bin:/usr/local/heroku/bin:$PATH
+# -*-shell-script-*-
+export PATH=$HOME/code/scripts:$HOME/.rvm/bin:/usr/local/heroku/bin:$HOME/code/living-in-a-box/bin:/usr/local/heroku/bin:$PATH
 export TERM=xterm-256color
 export PROJECT_PATHS=$HOME/code
 export EDITOR="emacsclient --alternate-editor=''"
