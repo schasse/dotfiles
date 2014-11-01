@@ -22,3 +22,7 @@ tmux-client*
 # Environment files that may contain sensitive data
 .env
 .powenv
+
+# IntelliJ IDEA project files
+*.iml
+.idea/
