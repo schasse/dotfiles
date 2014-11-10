@@ -4,13 +4,14 @@ windows:
   - editor:
       layout: even-horizontal
       panes:
-        - pj gapfish && e
+        - pj gapfish && e .
+        - exit # just to have 2/1
         - pj gapfish && ggpull
   - server:
       layout: even-horizontal
       panes:
         - pj gapfish
-        - pj gapfish && bin/rails server
+        - pj gapfish && sudo service mysql start; sudo service mongodb start; service redis-server start; bin/rails server
         - top
   - production:
       layout: even-horizontal
