@@ -11,6 +11,7 @@ sudo apt-key adv \
 sudo apt-get update
 
 sudo apt-get install \
+  aspell-de \
   curl \
   default-jre \
   emacs24 \
