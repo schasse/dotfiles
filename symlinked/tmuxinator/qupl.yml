@@ -1,0 +1,12 @@
+name: qupl
+root: ~/
+windows:
+  - editor:
+      layout: even-horizontal
+      panes:
+        - pj qupl && e .
+        - exit
+        - pj qupl && ggpull
+  - server:
+      layout: even-horizontal
+      panes: pj qupl && sudo service postgresql start
