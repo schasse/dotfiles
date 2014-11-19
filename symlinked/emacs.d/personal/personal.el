@@ -13,6 +13,7 @@
 ;; warn when opening files bigger than 50MB
 (setq large-file-warning-threshold 50000000)
 (setq flx-ido-threshhold 1000)
+(setq fill-column 80)
 
 ;; additional packages
 (prelude-require-packages
