@@ -28,6 +28,7 @@ sudo apt-get install \
   p7zip-full \
   pwgen \
   ruby2.0 \
+  shellcheck \
   tmux \
   traceroute \
   tree \
