@@ -9,4 +9,4 @@ windows:
         - pj qupl && ggpull
   - server:
       layout: even-horizontal
-      panes: pj qupl && sudo service postgresql start
+      panes: pj qupl && docker start qupl_postgres && bin/dev_server
