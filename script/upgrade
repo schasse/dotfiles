@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# upgrade sytem, oh-my-zsh, prelude and dotfiles
+#
 # this script will be triggered by
 # my adjustion of .oh-my-zsh/tools/check_for_upgrade.sh
 
@@ -29,7 +31,7 @@ update_with_git() {
 }
 
 # upgrade system if no gui
-if [[ -n "${DISPLAY}" ]]; then
+if [[ ! -n "${DISPLAY}" ]]; then
   printf '\033[0;34m%s\033[0m\n' 'Upgrading system'
   sudo apt-get update
   sudo apt-get upgrade
