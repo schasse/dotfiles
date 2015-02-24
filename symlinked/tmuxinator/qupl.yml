@@ -6,7 +6,7 @@ windows:
       panes:
         - pj qupl && e .
         - exit
-        - pj qupl && ggpull
+        - pj qupl && nvm use 0.10.33 && ggpull
   - server:
       layout: even-horizontal
-      panes: pj qupl && docker start qupl_postgres && bin/dev_server && bin/dev_server
+      panes: pj qupl && nvm use 0.10.33 && docker start qupl_postgres && bin/dev_server && bin/dev_server
