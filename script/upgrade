@@ -21,7 +21,7 @@ update_with_git() {
     git add . && git stash save
   fi
 
-  if ! git pull --rebase --stat origin master; then
+  if ! git pull --stat origin master; then
     fail_upgrade
   fi
 
