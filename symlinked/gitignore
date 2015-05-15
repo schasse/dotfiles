@@ -26,3 +26,5 @@ tmux-client*
 # IntelliJ IDEA project files
 *.iml
 .idea/
+.ensime
+.ensime_cache/
