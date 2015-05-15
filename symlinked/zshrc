@@ -4,7 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME=schasse
 COMPLETION_WAITING_DOTS=true
 
-plugins=(rails git rvm pj tmuxinator hub)
+plugins=(rails git rvm pj tmuxinator hub mvn)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -54,6 +54,8 @@ alias ai='sudo apt-get install'
 alias au='sudo apt-get update'
 alias acs='apt-cache search'
 alias ds='dpkg -l | grep '
+
+alias hs='history | grep -i '
 
 alias dsh="SYNC_DOTFILES=1 DOTFILES='.zsh .zshrc .gitconfig .rspec .pry_history .oh-my-zsh .oh-my-zsh/custom/schasse.zsh-theme' dev shell"
 alias cds='cdg && dsh'
