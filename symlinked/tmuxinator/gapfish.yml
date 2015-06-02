@@ -17,6 +17,4 @@ windows:
       layout: even-horizontal
       pre: pj gapfish_2
       panes:
-        -
-        - gcm && ggpull
-        - ssh prod -t 'top'
+        - gcm && ggpull && exit
