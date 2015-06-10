@@ -81,4 +81,7 @@
 (setq sh-basic-offset 2)
 (setq sh-indentation 2)
 
+;; html
+(setq web-mode-markup-indent-offset 2)
+
 ;;; personal.el ends here
