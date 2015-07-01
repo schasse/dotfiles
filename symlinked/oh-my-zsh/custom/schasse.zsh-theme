@@ -10,7 +10,7 @@ local ret_status="%(?:%{$fg_bold[red]%}➜ :%{$fg_bold[red]%}❊ ➜ %s)"
 PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}$(server_name)%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
 if [[ -x $HOME/.rvm/bin/rvm-prompt ]]; then
-  RPROMPT='%{$fg[yellow]%}$(rvm-prompt v p g)%{$reset_color%}'
+  RPROMPT='%{$fg[yellow]%}$(rvm-prompt v p g)%{$reset_color%} [%D{%H:%M}]'
 fi
 
 ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
