@@ -9,6 +9,9 @@ plugins=(rails git rvm pj tmuxinator hub mvn)
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
+export HISTSIZE=2147483647
+export SAVEHIST=$HISTSIZE
+
 # aliases
 alias p='pj '
 
