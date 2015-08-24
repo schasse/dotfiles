@@ -22,6 +22,7 @@
 ;;(require personal)
 
 (ido-vertical-mode 1)
+(setq ido-vertical-define-keys 'C-n-and-C-p-only)
 (global-git-gutter+-mode t)
 ;;(add-to-list 'mc/unsupported-minor-modes 'smartparens-mode)
 
