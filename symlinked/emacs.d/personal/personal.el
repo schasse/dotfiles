@@ -85,4 +85,7 @@
 ;; html
 (setq web-mode-markup-indent-offset 2)
 
+;; emmet
+(add-hook 'sgml-mode-hook 'emmet-mode)
+
 ;;; personal.el ends here
