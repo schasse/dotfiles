@@ -6,6 +6,8 @@ COMPLETION_WAITING_DOTS=true
 
 plugins=(rails git rvm pj tmuxinator hub mvn catimg autojump docker)
 
+export UPDATE_ZSH_DAYS=1
+
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 

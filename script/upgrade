@@ -30,12 +30,8 @@ update_with_git() {
   fi
 }
 
-# upgrade system if no gui
-if [[ ! -n "${DISPLAY}" ]]; then
-  printf '\033[0;34m%s\033[0m\n' 'Upgrading system'
-  sudo apt-get update
-  sudo apt-get upgrade
-fi
+printf '\033[0;34m%s\033[0m\n' 'Upgrading system'
+sudo dnf -y update
 
 # upgrade dotfiles
 printf '\033[0;34m%s\033[0m\n' 'Upgrading schasse/dotfiles'
