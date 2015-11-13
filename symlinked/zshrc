@@ -71,7 +71,7 @@ alias o='xdg-open'
 
 alias d='docker '
 
-[[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
+# [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 # [[ -s $HOME/.jenv/bin/jenv-init.sh ]] && source $HOME/.jenv/bin/jenv-init.sh && source $HOME/.jenv/commands/completion.sh
 # [[ -s $NVM_DIR/nvm.sh ]] && source $NVM_DIR/nvm.sh
