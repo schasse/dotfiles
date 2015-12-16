@@ -17,8 +17,8 @@
 
 ;; additional packages
 (prelude-require-packages
- '(git-gutter+ escreen rvm robe bundler rspec-mode
-               ido-vertical-mode ess vlf multiple-cursors ensime emmet-mode ag))
+ '(git-gutter+ escreen rvm robe bundler rspec-mode ido-vertical-mode ess vlf
+               multiple-cursors ensime emmet-mode ag ein-mumamo))
 ;;(require personal)
 
 (ido-vertical-mode 1)

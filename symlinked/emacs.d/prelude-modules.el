@@ -19,7 +19,7 @@
 ;; (require 'prelude-mediawiki)
 (require 'prelude-org)
 ;; (require 'prelude-perl)
-;; (require 'prelude-python)
+(require 'prelude-python)
 (require 'prelude-ruby)
 (require 'prelude-scala)
 ;; (require 'prelude-scheme)
