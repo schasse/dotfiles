@@ -29,6 +29,7 @@ rpm --quiet --query rpmfusion-nonfree-release || sudo dnf -y --nogpgcheck instal
 
 sudo dnf -y install \
   aspell-de \
+  aspell-en \
   autojump-zsh \
   emacs \
   fedy \
@@ -38,6 +39,7 @@ sudo dnf -y install \
   lynx \
   nmap \
   pwgen \
+  p7zip \
   ruby \
   ShellCheck \
   the_silver_searcher \
