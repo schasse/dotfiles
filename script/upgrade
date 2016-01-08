@@ -21,7 +21,7 @@ update_with_git() {
     git add . && git stash save
   fi
 
-  if ! git pull --stat origin master; then
+  if ! GIT_MERGE_AUTOEDIT=no git pull --stat origin master; then
     fail_upgrade
   fi
 
@@ -32,6 +32,9 @@ update_with_git() {
 
 printf '\033[0;34m%s\033[0m\n' 'Upgrading system'
 sudo dnf -y update
+
+printf '\033[0;34m%s\033[0m\n' 'Upgrading gems'
+sudo gem update
 
 printf '\033[0;34m%s\033[0m\n' 'Upgrading gems'
 sudo gem update
