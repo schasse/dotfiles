@@ -88,4 +88,7 @@
 ;; emmet
 (add-hook 'sgml-mode-hook 'emmet-mode)
 
+;; language
+(setq ispell-dictionary "en")
+
 ;;; personal.el ends here
