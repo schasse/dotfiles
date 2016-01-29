@@ -72,6 +72,24 @@ def install_prelude
   end
 end
 
+def install_prelude
+  if File.exist?(File.join(ENV['HOME'], '.tmux/plugins/tpm'))
+    puts 'found ~/.tmux/plugins/tpm'
+  else
+    print 'install tmux plugins to .tmux? [ynq] '
+    case $stdin.gets.chomp
+    when 'y'
+      puts 'installing tmux plugins'
+      system %Q{mkdir -p $HOME/.tmux/plugins/tpm}
+      system %Q{git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"}
+    when 'q'
+      exit
+    else
+      puts 'skipping tmux plugins'
+    end
+  end
+end
+
 class FileHandler < Struct.new(:from_file, :replace_all)
   def handle
     system %Q{mkdir -p "$HOME/#{File.dirname(to_file)}"} if from_file =~ /\//
