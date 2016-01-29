@@ -22,6 +22,7 @@ To remove the dotfile configs, run the following commands. Be certain to double 
 ```
 unlink ~/.zshrc
 unlink ~/.tmux.conf
+rm -rf ~/.tmux
 rm -rf ~/.dotfiles
 rm -rf ~/.oh-my-zsh
 rm -rf ~/.emacs.d
