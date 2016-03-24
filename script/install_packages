@@ -31,7 +31,8 @@ sudo dnf -y install \
   aspell-de \
   aspell-en \
   autojump-zsh \
-  cabal-install
+  cabal-install \
+  ctags-etags \
   emacs \
   fedy \
   ctags-etags \

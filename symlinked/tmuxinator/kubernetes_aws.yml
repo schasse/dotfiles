@@ -1,0 +1,20 @@
+name: kubernetes_aws
+root: ~/
+windows:
+  - editor:
+      layout: even-horizontal
+      panes:
+        - pj investigating_cans && e .
+        - pj investigating_cans
+  - kubernetes:
+      layout: even-vertical
+      panes:
+        - "ssh -o 'StrictHostKeyChecking no' -o 'ProxyCommand ssh -W %h:%p fedora@54.93.67.41' fedora@kubernetes_master journalctl -fx -u kube-scheduler"
+        - "ssh -o 'StrictHostKeyChecking no' -o 'ProxyCommand ssh -W %h:%p fedora@54.93.67.41' fedora@kubernetes_master journalctl -fx -u kube-controller-manager"
+        - "ssh -o 'StrictHostKeyChecking no' -o 'ProxyCommand ssh -W %h:%p fedora@54.93.67.41' fedora@kubernetes_master journalctl -fx -u kube-apiserver"
+        - "ssh -o 'StrictHostKeyChecking no' -o 'ProxyCommand ssh -W %h:%p fedora@54.93.67.41' fedora@kubernetes_minion0 journalctl -fx -u kubelet"
+  - kubectl:
+      layout: even-horizontal
+      panes:
+        - pj invesigating_cans
+        - watch -n 1 kubectl get no,po,rc,svc
