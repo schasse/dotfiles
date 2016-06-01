@@ -32,8 +32,8 @@
 ;; keybindings
 (global-set-key [remap other-window] 'nil)
 (define-key prelude-mode-map (kbd "C-c f") 'projectile-find-file)
-(define-key prelude-mode-map (kbd "C-M-o") 'prelude-smart-open-line-above)
-(define-key prelude-mode-map (kbd "C-M-j") 'prelude-top-join-line)
+(define-key prelude-mode-map (kbd "C-M-o") 'crux-smart-open-line-above)
+(define-key prelude-mode-map (kbd "C-M-j") 'crux-top-join-line)
 (define-key prelude-mode-map (kbd "C-M-e") 'er/expand-region)
 (define-key prelude-mode-map (kbd "M-/") 'company-manual-begin)
 ;;(global-set-key (kbd "C-M-c C-M-c") 'mc/edit-lines)
