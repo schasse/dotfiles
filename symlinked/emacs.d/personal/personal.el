@@ -91,4 +91,15 @@
 ;; language
 (setq ispell-dictionary "en")
 
+;; nice shortcuts
+(defun projectile-escreen-ag ()
+  "Run projectiles search in a new screen."
+  (interactive
+   (progn (escreen-create-screen-dim)
+          (crux-switch-to-previous-buffer)
+          (call-interactively 'projectile-ag)))
+  )
+
+(define-key prelude-mode-map (kbd "C-c s") 'projectile-escreen-ag)
+
 ;;; personal.el ends here
