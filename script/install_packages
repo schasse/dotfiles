@@ -38,6 +38,7 @@ sudo dnf -y install \
   ctags-etags \
   iotop \
   docker-engine \
+  docker-compose \
   lynx \
   nmap \
   pwgen \
