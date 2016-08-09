@@ -24,6 +24,7 @@ alias grsp='g reset HEAD~1 && gsp'
 alias ga='git add --all'
 alias ggp='git push origin $(current_branch)'
 alias gamend='git add --all && git commit --amend --no-edit'
+alias gm='GIT_MERGE_AUTOEDIT=no git merge'
 alias be='bundle exec '
 alias cpc='cap production rails:console'
 alias csc='cap staging rails:console'
@@ -73,6 +74,8 @@ alias -s html='xdg-open'
 alias o='xdg-open'
 
 alias d='docker '
+alias dc='docker-compose'
+alias dcr='docker-compose run '
 
 alias dokku='ssh dokku '
 
@@ -85,3 +88,5 @@ alias dokku='ssh dokku '
 
 # added by travis gem
 [ -f /home/sebastian/.travis/travis.sh ] && source /home/sebastian/.travis/travis.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
