@@ -36,9 +36,6 @@ sudo dnf -y update
 printf '\033[0;34m%s\033[0m\n' 'Upgrading gems'
 sudo gem update
 
-printf '\033[0;34m%s\033[0m\n' 'Upgrading gems'
-sudo gem update
-
 # upgrade dotfiles
 printf '\033[0;34m%s\033[0m\n' 'Upgrading schasse/dotfiles'
 cd ~/.dotfiles
