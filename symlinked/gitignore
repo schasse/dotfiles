@@ -28,3 +28,6 @@ tmux-client*
 .idea/
 .ensime
 .ensime_cache/
+
+# python virtualenv
+.venv
