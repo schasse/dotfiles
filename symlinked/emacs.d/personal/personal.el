@@ -18,7 +18,7 @@
 ;; additional packages
 (prelude-require-packages
  '(git-gutter+ escreen rvm robe bundler rspec-mode ido-vertical-mode vlf
-               multiple-cursors ensime emmet-mode ag ein-mumamo))
+               multiple-cursors emmet-mode ag ein-mumamo company))
 ;;(require personal)
 
 (ido-vertical-mode 1)
@@ -27,7 +27,10 @@
 ;;(add-to-list 'mc/unsupported-minor-modes 'smartparens-mode)
 
 ;; company (autocompletion)
-(setq company-idle-delay nil)
+(setq company-idle-delay .1)
+(setq company-transformers
+      '(company-sort-by-occurrence
+        company-sort-by-backend-importance))
 
 ;; keybindings
 (global-set-key [remap other-window] 'nil)
