@@ -87,6 +87,8 @@ alias dokku='ssh dokku '
 # [[ -r $NVM_DIR/bash_completion ]] && source $NVM_DIR/bash_completion
 
 # added by travis gem
-[ -f /home/sebastian/.travis/travis.sh ] && source /home/sebastian/.travis/travis.sh
+# [ -f /home/sebastian/.travis/travis.sh ] && source /home/sebastian/.travis/travis.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source <(kubectl completion zsh)
