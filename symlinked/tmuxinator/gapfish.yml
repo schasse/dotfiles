@@ -14,10 +14,8 @@ windows:
         - pj gapfish && for server in mongodb mysql redis; do docker-compose start $server; done; bin/rails server
         - top
   - kubernetes:
-      layout: tiled
+      layout: main-vertical
       panes:
-        - watch -n 1 $HOME/bin/kubectl get ingress,svc,deployments,rc,po,secret
-        - kc logs -f $(kc get po --selector=pod=redis-0 --output=jsonpath='{.items[*].metadata.name}') -c monitoring
-        - watch -n 1 '$HOME/bin/kubectl top nodes | sort'
-        - watch -n 1 '$HOME/bin/kubectl top pods | sort'
-        - pj gapfish_prophet
+        - pj k8s.gapfish.com
+        - ktop --namespace=gapfish-system
+        - ktop
