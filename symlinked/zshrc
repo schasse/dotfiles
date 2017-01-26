@@ -75,7 +75,7 @@ alias o='xdg-open'
 
 alias d='docker '
 alias dc='docker-compose'
-alias dcr='docker-compose run --rm --service'
+alias dcr='docker-compose run --rm --service-ports'
 
 alias dokku='ssh dokku '
 
@@ -92,3 +92,7 @@ alias dokku='ssh dokku '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source <(kubectl completion zsh)
+
+export PATH=$HOME/.pyenv/bin:$PATH
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
