@@ -13,6 +13,9 @@ sudo apt-add-repository "deb http://download.opensuse.org/repositories/home:/Hor
 sudo apt-add-repository "deb http://packages.cloud.google.com/apt cloud-sdk-$(lsb_release -c -s) main"
 wget -O- https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+sudo apt-add-repository "deb http://download.virtualbox.org/virtualbox/debian xenial contrib"
+
 sudo apt-get update
 
 sudo apt-get install \
@@ -59,7 +62,10 @@ if [[ -n "${DISPLAY}" ]]; then
        inkscape \
        mplayer \
        network-manager-openconnect-gnome \
+       virtualbox-5.1 \
+       dkms \
        vlc
+  # virtualbox-5.1 installation fails, try virtualbox instead :(
 fi
 
 # sudo gem install tmuxinator pry
