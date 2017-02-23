@@ -6,16 +6,10 @@ windows:
       panes:
         - pj gapfish && e .
         - exit # just to have 2/1
-        - pj gapfish && ggpull
+        - pj gapfish
   - server:
       layout: even-horizontal
       panes:
-        - pj gapfish_2 && gcm && ggpull && bundle
-        - pj gapfish && for server in mongodb mysql redis; do docker-compose start $server; done; bin/rails server
+        - pj gapfish/gapfish_2 && gcm && ggpull && bundle
+        - pj gapfish/gapfish && for server in mongodb mysql redis; do docker-compose start $server; done; bin/rails server
         - top
-  - kubernetes:
-      layout: main-vertical
-      panes:
-        - pj k8s.gapfish.com
-        - ktop --namespace=gapfish-system
-        - ktop

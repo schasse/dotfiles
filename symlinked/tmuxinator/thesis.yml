@@ -1,0 +1,9 @@
+name: gapfish
+root: ~/
+windows:
+  - editor:
+      layout: even-horizontal
+      panes:
+        - j masterthesis/thesis && e .
+        - exit # just to have 2/1
+        - j masterthesis/thesis
