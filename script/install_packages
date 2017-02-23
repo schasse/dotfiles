@@ -32,6 +32,7 @@ sudo apt-get install \
      git \
      google-cloud-sdk \
      iotop \
+     source-highlight \
      lynx \
      nmap \
      pass \
