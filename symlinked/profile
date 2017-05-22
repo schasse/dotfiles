@@ -16,6 +16,13 @@ if [ -n "$BASH_VERSION" ]; then
   fi
 fi
 
+# use custom screen resolution
+if [ "$(hostname)" = "schasse-ThinkPad" ]; then
+  xrandr --newmode "1536x864_60.00"  109.25  1536 1624 1784 2032  864 867 872 897 -hsync +vsync
+  xrandr --addmode eDP-1 1536x864_60.00
+  xrandr -s 1536x864_60.00
+fi
+
 export LANG='de_DE.UTF-8'
 export LANGUAGE='de:en'
 export LC_CTYPE='de_DE.UTF-8'
