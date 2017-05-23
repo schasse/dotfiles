@@ -1,0 +1,12 @@
+#!/bin/bash
+
+branch=$(git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||')
+ticket_nr=$(echo $branch | egrep -o '_[0-9]+$' | head -n 1 | \
+  egrep -o '[0-9]+')
+
+if [ "x$ticket_nr" != "x" ]; then
+  new_message="$(cat $1) [#$ticket_nr]"
+  echo "$new_message" > $1
+fi
+
+exit 0
