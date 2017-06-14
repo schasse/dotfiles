@@ -9,6 +9,7 @@ tramp
 .\#*
 TAGS
 .projectile
+.agignore
 backups/
 .bundle/
 
