@@ -11,5 +11,5 @@ windows:
       layout: even-horizontal
       panes:
         - pj gapfish/gapfish_2 && gcm && ggpull && bundle
-        - pj gapfish/gapfish && for server in mongodb mysql redis; do docker-compose start $server; done; bin/rails server
+        - pj gapfish/gapfish && for server in mongodb mysql redis; do docker-compose start $server; done; export $(cat ./.env | grep -v '#' | xargs); bin/rails server
         - top
