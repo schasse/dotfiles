@@ -18,6 +18,7 @@ export SAVEHIST=$HISTSIZE
 alias p='pj '
 
 alias gca='git commit -a'
+alias gy='git yolo '
 alias gcan='git commit -an'
 alias gsp='g stash && ggpull && g stash pop'
 alias grsp='g reset HEAD~1 && gsp'
