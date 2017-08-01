@@ -13,6 +13,6 @@
 [init]
 	templatedir = ~/.git_template
 [alias]
-	yolo = "!f() { message="$@"; git commit -a -m\"$message ($(curl -s whatthecommit.com/index.txt))\"; }; f"
+	yolo = "!f() { message="${@:-}"; git commit -a -m\"$message ($(curl -s whatthecommit.com/index.txt))\"; }; f"
 	; http://stackoverflow.com/a/5188364
 	recent = !git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
