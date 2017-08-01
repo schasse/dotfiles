@@ -32,6 +32,9 @@ alias sd='script/staging_deploy'
 alias pg='p gapfish/gapfish'
 alias h='nocorrect heroku'
 
+alias skd='systemctl --user start dinkube && kc config use-context admin@din'
+alias skg='systemctl --user stop dinkube && kc config use-context admin@gapfish'
+
 alias genctags='ctags-exuberant -f TAGS --extra=-f --languages=-javascript --exclude=.git --exclude=log -e -R . $(rvm gemdir)/gems/'
 
 alias m2e='mvn eclipse:clean eclipse:eclipse -DdownloadJavadocs=true'\

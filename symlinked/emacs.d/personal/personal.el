@@ -105,4 +105,15 @@
 
 (define-key prelude-mode-map (kbd "C-c s") 'projectile-escreen-ag)
 
+(defun write-buffer-file-to-tmux-buffer ()
+  "Copy buffer file name to the next tmux pane."
+  (interactive)
+  (let ((fn (buffer-file-name)))
+    (progn
+      (shell-command "tmux select-pane -t :.+")
+      (shell-command (concat "tmux send-keys " (shell-quote-argument fn)))
+      )))
+
+(define-key prelude-mode-map (kbd "C-c p t") 'projectile-escreen-ag)
+
 ;;; personal.el ends here
