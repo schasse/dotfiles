@@ -94,3 +94,7 @@ source <(kubectl completion zsh)
 export PATH=$HOME/.pyenv/bin:$PATH
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+if [ -z "$TMUX" ]; then
+  tmux
+fi
