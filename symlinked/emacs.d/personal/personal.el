@@ -94,6 +94,12 @@
 ;; language
 (setq ispell-dictionary "en")
 
+;; dired
+(defun dired-no-details ()
+  "To be run as hook for `dired-mode'."
+  (dired-hide-details-mode 1))
+(add-hook 'dired-mode-hook 'dired-no-details)
+
 ;; nice shortcuts
 (defun projectile-escreen-ag ()
   "Run projectiles search in a new screen."
