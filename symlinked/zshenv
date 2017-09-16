@@ -8,6 +8,7 @@ export EDITOR="emacsclient --alternate-editor=''"
 export NVM_DIR=$HOME/.nvm
 export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.kube/gcloud_gke_credentials.json
 export GOPATH=$HOME/.gocode
+export PASSWORD_STORE_DIR=$HOME/code/gapfish/pass
 
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=" -R"
