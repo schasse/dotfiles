@@ -67,6 +67,7 @@ alias cds='cdg && dsh'
 
 alias -g G='| grep -n'
 alias -g L='| less -R'
+alias wa='watch --color --interval 1 '
 
 alias -s html='xdg-open'
 alias o='xdg-open'
@@ -76,6 +77,7 @@ alias dc='docker-compose'
 alias dcr='docker-compose run --rm --service-ports'
 
 alias k=kubectl
+alias kaf='k apply -f'
 alias keti='k exec -ti'
 alias kcuc='k config use-context'
 alias kccc='k config current-context'
