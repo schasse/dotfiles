@@ -4,12 +4,12 @@ windows:
   - editor:
       layout: even-horizontal
       panes:
-        - pj gapfish && e .
+        - p gapfish && e .
         - exit # just to have 2/1
-        - pj gapfish
+        - pg; export $(cat ./.env | grep -v '#' | xargs)
   - server:
       layout: even-horizontal
       panes:
-        - pj gapfish/gapfish_2 && gcm && ggpull && bundle
-        - pj gapfish/gapfish && for server in mongodb mysql redis; do docker-compose start $server; done; export $(cat ./.env | grep -v '#' | xargs); bin/rails server
+        - p gapfish_2 && gcm && ggpull && bundle
+        - pg && for server in mongodb mysql redis; do docker-compose start $server; done; export $(cat ./.env | grep -v '#' | xargs); bin/rails server
         - top
