@@ -1,7 +1,5 @@
 # -*-shell-script-*-
 export PATH=$HOME/code/gapfish/k8s/bin:$HOME/code/scripts:$HOME/.rvm/bin:$HOME/.cabal/bin:/usr/local/heroku/bin:$HOME/code/living-in-a-box/bin:/usr/local/heroku/bin:$PATH
-# added by Anaconda2 2.4.1 installer
-# export PATH="/home/sebastian/.anaconda2/bin:$PATH"
 export TERM=xterm-256color
 export PROJECT_PATHS=($HOME/code $HOME/code/gapfish)
 export EDITOR="emacsclient --alternate-editor=''"
@@ -13,7 +11,7 @@ export PASSWORD_STORE_DIR=$HOME/code/gapfish/pass
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=" -R"
 
-# export LANG="en_US.UTF-8"
+export LANG="en_US.UTF-8"
 # export LANGUAGE="en_US:en"
 export LC_CTYPE="en_US.UTF-8"
 # export LC_NUMERIC="en_US.UTF-8"
@@ -27,3 +25,18 @@ export LC_CTYPE="en_US.UTF-8"
 # export LC_TELEPHONE="en_US.UTF-8"
 # export LC_MEASUREMENT="en_US.UTF-8"
 # export LC_IDENTIFICATION="en_US.UTF-8"
+
+# unset LANG
+unset LANGUAGE
+# unset LC_CTYPE
+unset LC_NUMERIC
+unset LC_TIME
+unset LC_COLLATE
+unset LC_MONETARY
+unset LC_MESSAGES
+unset LC_PAPER
+unset LC_NAME
+unset LC_ADDRESS
+unset LC_TELEPHONE
+unset LC_MEASUREMENT
+unset LC_IDENTIFICATION
