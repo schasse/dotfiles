@@ -120,6 +120,6 @@
       (shell-command (concat "tmux send-keys " (shell-quote-argument fn)))
       )))
 
-(define-key prelude-mode-map (kbd "C-c p t") 'projectile-escreen-ag)
+(define-key prelude-mode-map (kbd "C-x t") 'write-buffer-file-to-tmux-buffer)
 
 ;;; personal.el ends here

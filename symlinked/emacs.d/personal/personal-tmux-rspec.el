@@ -10,7 +10,7 @@
 (setq personal-tmux-pane-number 1)
 
 (defun personal-tmux-rspec-verify-single ()
-  "Runs rspec-verify-single command but in tmux"
+  "Run rspec-verify-single command but in tmux."
   (interactive)
   (setq personal-tmux-rspec-enabled t)
   (rspec-verify-single))
