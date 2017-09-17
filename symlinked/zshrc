@@ -68,6 +68,7 @@ alias cds='cdg && dsh'
 alias -g G='| grep -n'
 alias -g L='| less -R'
 alias wa='watch --color --interval 1 '
+alias dff='colordiff '
 
 alias -s html='xdg-open'
 alias o='xdg-open'
