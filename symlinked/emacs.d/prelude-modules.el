@@ -14,7 +14,7 @@
 (require 'prelude-helm)
 (require 'prelude-key-chord)
 (require 'prelude-js)
-;; (require 'prelude-latex)
+(require 'prelude-latex)
 (require 'prelude-lisp)
 ;; (require 'prelude-mediawiki)
 (require 'prelude-org)

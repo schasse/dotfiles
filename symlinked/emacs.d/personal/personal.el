@@ -100,6 +100,15 @@
   (dired-hide-details-mode 1))
 (add-hook 'dired-mode-hook 'dired-no-details)
 
+;; latex
+(defun latex-whitespace ()
+  "Disable whitespace mode for latex."
+  (set (make-local-variable 'whitespace-line-column) 90)
+  (whitespace-mode -1)
+  (whitespace-mode +1)
+  (set-fill-column 90))
+(add-hook 'LaTeX-mode-hook 'latex-whitespace)
+
 ;; nice shortcuts
 (defun projectile-escreen-ag ()
   "Run projectiles search in a new screen."
