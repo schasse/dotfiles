@@ -50,6 +50,11 @@
 (defadvice delete-window (after restore-balance activate)
   (balance-windows))
 
+;; projectile workaround: https://github.com/bbatsov/projectile/issues/1183
+(setq projectile-mode-line
+      '(:eval (format " Projectile[%s]"
+                      (projectile-project-name))))
+
 ;; ruby
 (setq ruby-insert-encoding-magic-comment nil)
 (setq ruby-deep-indent-paren nil)
