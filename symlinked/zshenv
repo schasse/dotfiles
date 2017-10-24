@@ -2,7 +2,7 @@
 export PATH=$HOME/code/gapfish/k8s/bin:$HOME/code/scripts:$HOME/.rvm/bin:$HOME/.cabal/bin:/usr/local/heroku/bin:$HOME/code/living-in-a-box/bin:/usr/local/heroku/bin:$PATH
 export TERM=xterm-256color
 export PROJECT_PATHS=($HOME/code $HOME/code/gapfish)
-export EDITOR="emacsclient --alternate-editor=''"
+export EDITOR="emacsclient --tty --alternate-editor=''"
 export NVM_DIR=$HOME/.nvm
 export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.kube/gcloud_gke_credentials.json
 export GOPATH=$HOME/.gocode
