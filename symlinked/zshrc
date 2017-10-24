@@ -78,6 +78,11 @@ alias dc='docker-compose'
 alias dcr='docker-compose run --rm --service-ports'
 
 alias k=kubectl
+alias kg='k get'
+alias kl='k logs'
+alias ke='k edit'
+alias kd='k describe'
+alias kdel='k delete'
 alias kaf='k apply -f'
 alias keti='k exec -ti'
 alias kcuc='k config use-context'
@@ -103,6 +108,8 @@ alias krsd='k rollout status deployment'
 alias kgrs='k get rs'
 alias krh='k rollout history'
 alias kru='k rollout undo'
+alias kgn='k get pods'
+alias kdn='k describe pods'
 
 # [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
