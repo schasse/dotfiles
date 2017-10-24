@@ -32,7 +32,7 @@ update_with_git() {
 
 printf '\033[0;34m%s\033[0m\n' 'Upgrading system'
 sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get upgrade -y
 
 printf '\033[0;34m%s\033[0m\n' 'Upgrading gems'
 gem update
