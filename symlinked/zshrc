@@ -111,6 +111,8 @@ alias kru='k rollout undo'
 alias kgn='k get pods'
 alias kdn='k describe pods'
 
+unalias rg # was rails generate, now is ripgrep
+
 # [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 # [[ -s $HOME/.jenv/bin/jenv-init.sh ]] && source $HOME/.jenv/bin/jenv-init.sh && source $HOME/.jenv/commands/completion.sh
