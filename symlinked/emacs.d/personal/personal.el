@@ -49,6 +49,7 @@
   (balance-windows))
 (defadvice delete-window (after restore-balance activate)
   (balance-windows))
+(setq split-height-threshold nil) ;; split windows vertically
 
 ;; projectile workaround: https://github.com/bbatsov/projectile/issues/1183
 (setq projectile-mode-line
