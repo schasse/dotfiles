@@ -125,6 +125,8 @@ unalias rg # was rails generate, now is ripgrep
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+function npm-do { (PATH=$(npm bin):$PATH; eval $@;) }
+
 source <(kubectl completion zsh 2>/dev/null)
 
 export PATH=$HOME/.pyenv/bin:$PATH
