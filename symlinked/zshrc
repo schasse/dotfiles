@@ -17,6 +17,9 @@ export SAVEHIST=$HISTSIZE
 # aliases
 alias p='pj '
 
+alias g='hub'
+alias ci='g ci-status -v'
+alias prs='g pr list --sort-ascending -f"%sC%>(8)%i%Creset  %t%  l %U%n"'
 alias gca='git commit -a'
 alias gy='git yolo '
 alias gcan='git commit -an'
