@@ -18,13 +18,15 @@
 ;; additional packages
 (prelude-require-packages
  '(git-gutter+ escreen rvm robe bundler rspec-mode ido-vertical-mode vlf
-               multiple-cursors emmet-mode ag ein company))
+               multiple-cursors emmet-mode ag ein company build-status
+               magit-gh-pulls))
 ;;(require personal)
 
 (ido-vertical-mode 1)
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 (global-git-gutter+-mode t)
 ;;(add-to-list 'mc/unsupported-minor-modes 'smartparens-mode)
+(add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls)
 
 ;; company (autocompletion)
 (setq company-idle-delay .1)
@@ -129,10 +131,11 @@
 (defun write-buffer-file-to-tmux-buffer ()
   "Copy buffer file name to the next tmux pane."
   (interactive)
-  (let ((fn (buffer-file-name)))
+  (let ((fn (concat "$(dir=$PWD; echo " (buffer-file-name) " | sed \"s/${dir//\\//\\\\/}/\./g\")")))
     (progn
       (shell-command "tmux select-pane -t :.+")
       (shell-command (concat "tmux send-keys " (shell-quote-argument fn)))
+      (shell-command (concat "tmux send-keys " (shell-quote-argument "\t")))
       )))
 
 (define-key prelude-mode-map (kbd "C-x t") 'write-buffer-file-to-tmux-buffer)
