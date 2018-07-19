@@ -15,6 +15,9 @@ export HISTSIZE=2147483647
 export SAVEHIST=$HISTSIZE
 
 # aliases
+alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
+alias del='rmtrash'
+
 alias p='pj '
 
 alias g='hub'

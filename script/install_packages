@@ -47,6 +47,7 @@ sudo apt-get install \
      silversearcher-ag \
      tmux \
      traceroute \
+     trash-cli \
      tree \
      unclutter \
      whois \
