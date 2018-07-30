@@ -11,6 +11,8 @@ export PASSWORD_STORE_DIR=$HOME/code/gapfish/pass
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=" -R"
 
+export GPG_TTY=$(tty)
+
 export LANG="en_US.UTF-8"
 # export LANGUAGE="en_US:en"
 export LC_CTYPE="en_US.UTF-8"

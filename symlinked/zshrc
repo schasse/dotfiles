@@ -15,7 +15,7 @@ export HISTSIZE=2147483647
 export SAVEHIST=$HISTSIZE
 
 # aliases
-alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
+alias rm="echo Use 'del', or the full path i.e. '/bin/rm' && ~/rm"
 alias del='rmtrash'
 
 alias p='pj '
@@ -116,6 +116,17 @@ alias krh='k rollout history'
 alias kru='k rollout undo'
 alias kgn='k get pods'
 alias kdn='k describe pods'
+
+alias -g -- -lo='--selector app=operations'
+alias -g -- -lp='--selector app=prophet'
+alias -g -- -ldep='--selector app=deployer'
+alias -g -- -lrc='--selector app=redis-cluster'
+alias -g -- -lda='--selector app=dashboard'
+alias -g -- -ll='--selector app=gapfish-login'
+alias -g -- -lrs='--selector app=rewe-sftp'
+alias -g -- -lm='--selector app=mongo'
+alias -g -- -lgu='--selector app=gem-updater'
+alias -g -- -ngs='--namespace gapfish-system'
 
 unalias rg # was rails generate, now is ripgrep
 
