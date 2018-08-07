@@ -93,7 +93,7 @@ alias kaf='k apply -f'
 alias keti='k exec -ti'
 alias kcuc='k config use-context'
 alias kccc='k config current-context'
-alias kgp='k get pods'
+alias kgp="k get pods --field-selector='status.phase!=Succeeded,status.phase!=Failed'"
 alias klp='k logs pods'
 alias kep='k edit pods'
 alias kdp='k describe pods'
