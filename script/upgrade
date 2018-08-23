@@ -84,7 +84,16 @@ cd ~/.emacs.d
 update_with_git
 emacs -nw --eval '(progn (package-list-packages) (epl-upgrade) (prelude-recompile-init) (kill-emacs))'
 printf '\033[0;34m%s\033[0m\n' 'Prelude has been updated and/or is at the current version.'
+cd ~
 
 # upgrade tmux plugins
 printf '\033[0;34m%s\033[0m\n' 'Upgrading tmux plugins'
 ~/.tmux/plugins/tpm/bin/update_plugins all
+
+# upgrade fzf
+printf '\033[0;34m%s\033[0m\n' 'Upgrading tmux plugins'
+cd ~/.fzf
+update_with_git
+./install --all --no-bash --no-fish
+printf '\033[0;34m%s\033[0m\n' 'Prelude has been updated and/or is at the current version.'
+cd ~
