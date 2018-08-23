@@ -1,6 +1,9 @@
 [user]
 	name = schasse
 	email = mail@sebastianschasse.de
+	signingkey = FF5A80D1EE605F6D
+[commit]
+        gpgsign = true
 [core]
 	editor = emacsclient --tty --alternate-editor=''
 	excludesfile = /home/schasse/.gitignore
