@@ -1,7 +1,7 @@
 # -*-shell-script-*-
 ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME=schasse
+ZSH_THEME=''
 COMPLETION_WAITING_DOTS=true
 
 plugins=(rails git rvm pj tmuxinator hub mvn catimg autojump docker)
@@ -13,6 +13,10 @@ unsetopt correct_all
 
 export HISTSIZE=2147483647
 export SAVEHIST=$HISTSIZE
+
+fpath=( "$HOME/.dotfiles/symlinked/oh-my-zsh/custom/pure" $fpath )
+autoload -U promptinit; promptinit
+prompt pure
 
 # aliases
 alias rm="echo Use 'del', or the full path i.e. '/bin/rm' && ~/rm"
