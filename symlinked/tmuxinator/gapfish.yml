@@ -10,8 +10,8 @@ windows:
   - server:
       layout: even-horizontal
       panes:
-        - pg && for server in mongodb mysql redis; do docker-compose start $server; done; export $(cat ./.env | grep -v '#' | xargs); BACKOFFICE_OPERATIONS_ENABLED=false bin/rails server
-        - pg && export $(cat ./.env | grep -v '#' | xargs); USER_AND_SUPPORT_ENABLED=false bin/rails server -p 3100 --pid tmp/pids/operations_server.pid
+        - pg && for server in mongodb mysql redis; do docker-compose start $server; done; export $(cat ./.env | grep -v '#' | xargs); USER_AND_SUPPORT_ENABLED=true BACKOFFICE_OPERATIONS_ENABLED=false bin/rails server
+        - pg && export $(cat ./.env | grep -v '#' | xargs); BACKOFFICE_OPERATIONS_ENABLED=true USER_AND_SUPPORT_ENABLED=false bin/rails server -p 3100 --pid tmp/pids/operations_server.pid
         - p login && gcm && ggpull && bundle && bin/rails s -p 4000
         - pg && export $(cat ./.env | grep -v '#' | xargs); # sidekiq
   - deploy:
