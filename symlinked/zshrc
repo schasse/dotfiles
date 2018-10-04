@@ -20,6 +20,8 @@ alias del='rmtrash'
 
 alias p='pj '
 
+alias -g -- clip='xclip -i -selection clipboard'
+
 alias g='hub'
 alias ci='g ci-status -v'
 alias prs='g pr list --sort-ascending -f"%sC%>(8)%i%Creset  %t%  l %U%n"'
