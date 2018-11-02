@@ -7,13 +7,6 @@ server_name() {
 }
 
 # Outputs current context info in prompt format
-k8s_context() {
-  kubectl config current-context 2>&1 > /dev/null | awk '{print $2}'
-}
-
-depctl_context() {
-  symlink=readlink -f $HOME/.deployer/deployer_env 2> /dev/null
-}
 k8s_prompt_info() {
   local ref
   local ref2
