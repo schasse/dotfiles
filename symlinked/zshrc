@@ -35,6 +35,7 @@ alias ggp='git push origin $(current_branch)'
 alias gamend='git add --all && git commit --amend --no-edit'
 alias gm='GIT_MERGE_AUTOEDIT=no git merge'
 alias gr='git recent'
+alias -g -- -fl='--force-with-lease'
 alias be='bundle exec '
 alias cpc='cap production rails:console'
 alias sd='script/staging_deploy'
@@ -84,6 +85,8 @@ alias o='xdg-open'
 alias d='docker '
 alias dc='docker-compose'
 alias dcr='docker-compose run --rm --service-ports'
+alias dcb='TAG=`depctl tag` docker-compose build'
+alias dcp='TAG=`depctl tag` docker-compose push'
 
 alias k=kubectl
 alias kg='k get'
@@ -143,8 +146,6 @@ unalias rg # was rails generate, now is ripgrep
 # [ -f /home/sebastian/.travis/travis.sh ] && source /home/sebastian/.travis/travis.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-function npm-do { (PATH=$(npm bin):$PATH; eval $@;) }
 
 source <(kubectl completion zsh 2>/dev/null)
 
