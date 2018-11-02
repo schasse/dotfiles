@@ -88,6 +88,7 @@
           (lambda ()
             (subword-mode +1)))
 ;; (add-to-list 'ac-modes 'coffee-mode)
+(setq jsx-indent-level 2)
 
 ;; sh
 (setq sh-basic-offset 2)
