@@ -32,3 +32,5 @@ tmux-client*
 
 # python virtualenv
 .venv
+
+sidekiq_complete.yml
