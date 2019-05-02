@@ -11,6 +11,13 @@ export UPDATE_ZSH_DAYS=1
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
+for dir in $PROJECT_PATHS; do
+  if [[ -d "$dir/tools/bin" ]]; then
+    export PATH=$dir/tools/bin:$PATH
+    source $dir/tools/zsh/aliases
+  fi
+done
+
 export HISTSIZE=2147483647
 export SAVEHIST=$HISTSIZE
 
