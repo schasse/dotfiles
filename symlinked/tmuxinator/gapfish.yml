@@ -6,14 +6,14 @@ windows:
       panes:
         - pj gapfish/gapfish && e .
         - exit # just to have 2/1
-        - "pj gapfish/gapfish && source <(ruby -e'puts File.read(\".env\").lines.map!{|l| (\"export \" + l.strip) if l =~ /^[A-Z]/}.compact.join(\"\\n\")') && export USER_AND_SUPPORT_ENABLED=true BACKOFFICE_OPERATIONS_ENABLED=true"
+        - "pj gapfish/gapfish && source <(convert_env user_and_support/.env) && source <(convert_env backoffice_operations/.env)"
   - server:
       layout: even-vertical
       panes:
-        - "pj gapfish/gapfish && for server in mongodb mysql redis; do docker-compose start $server; done && source <(ruby -e'puts File.read(\".env\").lines.map!{|l| (\"export \" + l.strip) if l =~ /^[A-Z]/}.compact.join(\"\\n\")') && USER_AND_SUPPORT_ENABLED=true BACKOFFICE_OPERATIONS_ENABLED=false bin/rails server"
-        - "pj gapfish/gapfish && source <(ruby -e'puts File.read(\".env\").lines.map!{|l| (\"export \" + l.strip) if l =~ /^[A-Z]/}.compact.join(\"\\n\")') && USER_AND_SUPPORT_ENABLED=true BACKOFFICE_OPERATIONS_ENABLED=false bundle exec sidekiq -C config/config_user_and_support/sidekiq_complete.yml"
-        - "pj gapfish/gapfish && source <(ruby -e'puts File.read(\".env\").lines.map!{|l| (\"export \" + l.strip) if l =~ /^[A-Z]/}.compact.join(\"\\n\")') && BACKOFFICE_OPERATIONS_ENABLED=true USER_AND_SUPPORT_ENABLED=false bin/rails server -p 3100 --pid tmp/pids/operations_server.pid"
-        - "pj gapfish/gapfish && source <(ruby -e'puts File.read(\".env\").lines.map!{|l| (\"export \" + l.strip) if l =~ /^[A-Z]/}.compact.join(\"\\n\")') && USER_AND_SUPPORT_ENABLED=false BACKOFFICE_OPERATIONS_ENABLED=true bundle exec sidekiq -C config/config_backoffice_operations/sidekiq_complete.yml"
+        - "pj gapfish/gapfish && cd user_and_support && for server in mongodb mysql redis; do docker-compose start $server; done && source <(convert_env .env) && bundle && USER_AND_SUPPORT_ENABLED=true BACKOFFICE_OPERATIONS_ENABLED=false bin/rails server"
+        - "pj gapfish/gapfish && cd user_and_support && source <(convert_env .env) && USER_AND_SUPPORT_ENABLED=true BACKOFFICE_OPERATIONS_ENABLED=false bundle exec sidekiq -C config/config_user_and_support/sidekiq_complete.yml"
+        - "pj gapfish/gapfish && cd backoffice_operations && source <(convert_env .env) && bundle && bin/rails server -p 3100"
+        - "pj gapfish/gapfish && cd backoffice_operations && source <(convert_env .env) && bundle exec sidekiq -C config/sidekiq_complete.yml"
         - pj prophet && gcm && ggpull && bundle && export $(cat ./.env | grep -v '#' | xargs) && bundle exec rackup config.ru -p4567
         - pj prophet && gcm && ggpull && bundle && export $(cat ./.env | grep -v '#' | xargs) && bundle exec sidekiq -r ./config/setup_sidekiq.rb -C ./config/sidekiq/sidekiq.yml
         - pj login && gcm && ggpull && bundle && bin/rails s -p 4000
@@ -21,4 +21,4 @@ windows:
   - deploy:
       layout: even-horizontal
       panes:
-        - pj gapfish_2 && gcm && ggpull && bundle
+        - pj gapfish_2 && gcm && ggpull
