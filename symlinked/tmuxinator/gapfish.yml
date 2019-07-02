@@ -10,8 +10,8 @@ windows:
   - server:
       layout: even-vertical
       panes:
-        - "pj gapfish/gapfish && cd user_and_support && for server in mongodb mysql redis; do docker-compose start $server; done && source <(convert_env .env) && bundle && USER_AND_SUPPORT_ENABLED=true BACKOFFICE_OPERATIONS_ENABLED=false bin/rails server"
-        - "pj gapfish/gapfish && cd user_and_support && source <(convert_env .env) && USER_AND_SUPPORT_ENABLED=true BACKOFFICE_OPERATIONS_ENABLED=false bundle exec sidekiq -C config/config_user_and_support/sidekiq_complete.yml"
+        - "pj gapfish/gapfish && cd user_and_support && for server in mongodb mysql redis; do docker-compose start $server; done && source <(convert_env .env) && bundle && bin/rails server"
+        - "pj gapfish/gapfish && cd user_and_support && source <(convert_env .env) && bundle exec sidekiq -C config/config_user_and_support/sidekiq_complete.yml"
         - "pj gapfish/gapfish && cd backoffice_operations && source <(convert_env .env) && bundle && bin/rails server -p 3100"
         - "pj gapfish/gapfish && cd backoffice_operations && source <(convert_env .env) && bundle exec sidekiq -C config/sidekiq_complete.yml"
         - pj prophet && gcm && ggpull && bundle && export $(cat ./.env | grep -v '#' | xargs) && bundle exec rackup config.ru -p4567
