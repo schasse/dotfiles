@@ -14,6 +14,8 @@
 (setq large-file-warning-threshold 50000000)
 (setq flx-ido-threshhold 1000)
 (setq fill-column 80)
+(setq projectile-indexing-method 'hybrid)
+
 
 ;; additional packages
 (prelude-require-packages
