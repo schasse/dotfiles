@@ -44,7 +44,7 @@ alias -g -- -fl='--force-with-lease'
 alias be='bundle exec '
 alias cpc='cap production rails:console'
 alias sd='script/staging_deploy'
-alias pg='p gapfish/gapfish'
+alias pg='pj gapfish/gapfish'
 alias h='nocorrect heroku'
 
 alias skd='systemctl --user start dinkube && kc config use-context admin@din'
@@ -141,7 +141,6 @@ alias -g -- -ngs='--namespace gapfish-system'
 unalias rg # was rails generate, now is ripgrep
 
 # [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 # [[ -s $HOME/.jenv/bin/jenv-init.sh ]] && source $HOME/.jenv/bin/jenv-init.sh && source $HOME/.jenv/commands/completion.sh
 # [[ -s $NVM_DIR/nvm.sh ]] && source $NVM_DIR/nvm.sh
 # this completion shit may break something
@@ -167,3 +166,5 @@ compdef _pj p
 if [ -z "$TMUX" ]; then
   tmux
 fi
+
+[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
