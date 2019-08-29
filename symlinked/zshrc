@@ -159,7 +159,14 @@ eval "$(pyenv virtualenv-init -)"
 
 p() {
   pj "$@"
-  tmux rename-window "$*"
+  current_name=$(tmux display-message -p '#W')
+  if [[ $current_name != 'editor' ]]; then
+    if [[ $current_name != 'server' ]]; then
+      if [[ $current_name != 'deploy' ]]; then
+        tmux rename-window "$*"
+      fi
+    fi
+  fi
 }
 compdef _pj p
 
