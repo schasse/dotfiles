@@ -74,6 +74,7 @@
          'ruby-tools-to-symbol)
        (define-key ruby-tools-mode-map (kbd "C-c ;")
          'ruby-tools-clear-string)))
+(setq-default flycheck-disabled-checkers '(ruby-reek))
 
 ;;(add-hook 'ruby-mode-hook 'robe-mode)
 
