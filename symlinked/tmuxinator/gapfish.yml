@@ -6,18 +6,18 @@ windows:
       panes:
         - pj gapfish/gapfish && e .
         - exit # just to have 2/1
-        - "pj gapfish/gapfish && source <(convert_env user_and_support/.env) && source <(convert_env backoffice_operations/.env)"
+        - "pj gapfish/gapfish && source <(convert_env user_and_support/.env) && rvm use --create 2.5.5@gapfish && source <(convert_env backoffice_operations/.env) && export MONGO_HOSTS_2='[mongodb2]'"
   - server:
       layout: even-vertical
       panes:
-        - "pj gapfish/gapfish && cd user_and_support && for server in mongodb mysql mysql-data-warehouse redis; do docker-compose up --no-start $server; docker-compose start $server; done && source <(convert_env .env) && bundle && bin/rails server"
-        - "pj gapfish/gapfish && cd user_and_support && source <(convert_env .env) && bundle exec sidekiq -C config/config_user_and_support/sidekiq_complete.yml"
-        - "pj gapfish/gapfish && cd backoffice_operations && source <(convert_env .env) && bundle && bin/rails server -p 3100"
-        - "pj gapfish/gapfish && cd backoffice_operations && source <(convert_env .env) && bundle exec sidekiq -C config/sidekiq_complete.yml"
-        - pj prophet && gcm && ggpull && bundle && export $(cat ./.env | grep -v '#' | xargs) && bundle exec rackup config.ru -p4567
-        - pj prophet && gcm && ggpull && bundle && export $(cat ./.env | grep -v '#' | xargs) && bundle exec sidekiq -r ./config/setup_sidekiq.rb -C ./config/sidekiq/sidekiq.yml
-        - pj login && gcm && ggpull && bundle && bin/rails s -p 4000
-        - pj gapfish_user_oauth && gcm && ggpull && bundle && export $(cat ./.env | grep -v '#' | xargs) && bin/rails server -p 3423
+        - "pj gapfish/gapfish && cd user_and_support && for server in mongodb mysql mysql-data-warehouse redis; do docker-compose up --no-start $server; docker-compose start $server; done && source <(convert_env .env) && rvm use --create 2.5.5@gapfish && export MONGO_HOSTS_2='[mongodb2]' && bundle && bin/rails server"
+        - "pj gapfish/gapfish && cd user_and_support && source <(convert_env .env) && rvm use --create 2.5.5@gapfish && export MONGO_HOSTS_2='[mongodb2]' && bundle exec sidekiq -C config/config_user_and_support/sidekiq_complete.yml"
+        - "pj gapfish/gapfish && cd backoffice_operations && source <(convert_env .env) && rvm use --create 2.5.5@gapfish && export MONGO_HOSTS_2='[mongodb2]' && bundle && bin/rails server -p 3100"
+        - "pj gapfish/gapfish && cd backoffice_operations && source <(convert_env .env) && rvm use --create 2.5.5@gapfish && export MONGO_HOSTS_2='[mongodb2]' && bundle exec sidekiq -C config/sidekiq_complete.yml"
+        - pj prophet && gcm && ggpull && rvm use --create 2.5.5@gapfish && bundle && export $(cat ./.env | grep -v '#' | xargs) && bundle exec rackup config.ru -p45678
+        - pj prophet && gcm && ggpull && rvm use --create 2.5.5@gapfish && bundle && export $(cat ./.env | grep -v '#' | xargs) && bundle exec sidekiq -r ./config/setup_sidekiq.rb -C ./config/sidekiq/sidekiq.yml
+        - pj login && gcm && ggpull && rvm use --create 2.5.5@gapfish && bundle && bin/rails s -p 4000
+        - pj gapfish_user_oauth && gcm && ggpull && rvm use --create 2.5.5@gapfish && bundle && export $(cat ./.env | grep -v '#' | xargs) && bin/rails server -p 3423
   - deploy:
       layout: even-horizontal
       panes:
