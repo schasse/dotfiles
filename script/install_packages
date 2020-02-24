@@ -17,9 +17,12 @@ wget -O- https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key ad
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
 sudo apt-add-repository "deb http://download.virtualbox.org/virtualbox/debian xenial contrib"
 
+sudo add-apt-repository ppa:mmstick76/alacritty
+
 sudo apt-get update
 
 sudo apt-get install \
+     alacritty \
      aspell-de \
      aspell-en \
      autojump \
