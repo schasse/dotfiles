@@ -4,7 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME=schasse
 COMPLETION_WAITING_DOTS=true
 
-plugins=(rails git rvm pj tmuxinator hub mvn catimg autojump docker)
+plugins=(rails git rvm pj tmuxinator mvn catimg autojump docker)
 
 export UPDATE_ZSH_DAYS=1
 
@@ -137,8 +137,6 @@ alias -g -- -lrs='--selector app=rewe-sftp'
 alias -g -- -lm='--selector app=mongo'
 alias -g -- -lgu='--selector app=gem-updater'
 alias -g -- -ngs='--namespace gapfish-system'
-
-unalias rg # was rails generate, now is ripgrep
 
 # [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 # [[ -s $HOME/.jenv/bin/jenv-init.sh ]] && source $HOME/.jenv/bin/jenv-init.sh && source $HOME/.jenv/commands/completion.sh
