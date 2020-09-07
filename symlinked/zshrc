@@ -22,7 +22,7 @@ export HISTSIZE=2147483647
 export SAVEHIST=$HISTSIZE
 
 # aliases
-# alias rm="echo Use 'del', or the full path i.e. '/bin/rm' && ~/rm"
+alias rm="echo \"\033[0;31mUse 'del', or the full path i.e. '/bin/rm'\" && exit 1"
 alias del='rmtrash'
 
 alias -g -- clip='xclip -i -selection clipboard'
