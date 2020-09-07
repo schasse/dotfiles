@@ -5,17 +5,14 @@ sudo apt-add-repository "deb http://archive.canonical.com/ubuntu $(lsb_release -
 # sudo apt-add-repository "deb http://linux.dropbox.com/ubuntu/ $(lsb_release -sc) main"
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo apt-add-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+sudo apt-add-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
 # arc-theme
 # wget -O- http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key | sudo apt-key add -
 # sudo apt-add-repository "deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /"
 
-sudo apt-add-repository "deb http://packages.cloud.google.com/apt cloud-sdk-$(lsb_release -c -s) main"
+sudo apt-add-repository "deb https://packages.cloud.google.com/apt cloud-sdk main"
 wget -O- https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-
-wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
-sudo apt-add-repository "deb http://download.virtualbox.org/virtualbox/debian xenial contrib"
 
 sudo add-apt-repository ppa:mmstick76/alacritty
 
@@ -30,10 +27,10 @@ sudo apt-get install \
      curl \
      default-jre \
      editorconfig \
-     emacs24 \
+     emacs-nox \
      exuberant-ctags \
      iotop \
-     docker-ce \
+     docker-ce docker-ce-cli containerd.io \
      git \
      google-cloud-sdk \
      iotop \
@@ -42,7 +39,6 @@ sudo apt-get install \
      nmap \
      pass \
      p7zip-full \
-     python-pip \
      pwgen \
      redshift \
      ruby \
@@ -58,22 +54,20 @@ sudo apt-get install \
      zsh
 
 # if there is a graphical environment
-if [[ -n "${DISPLAY}" ]]; then
-  sudo apt-get install \
-       # arc-theme \
-       backintime-gnome \
-       chromium-browser \
-       gnome-tweak-tool \
-       gnupg2 pcscd scdaemon \
-       gparted \
-       inkscape \
-       mplayer \
-       network-manager-openconnect-gnome \
-       virtualbox-5.1 \
-       dkms \
-       vlc
-  # virtualbox-5.1 installation fails, try virtualbox instead :(
-fi
+# if [[ -n "${DISPLAY}" ]]; then
+#   sudo apt-get install \
+#        backintime-qt \
+#        chromium-browser \
+#        gnome-tweak-tool \
+#        gnupg2 pcscd scdaemon \
+#        gparted \
+#        inkscape \
+#        mplayer \
+#        network-manager-openconnect-gnome \
+#        dkms \
+#        vlc
+#   # virtualbox-5.1 installation fails, try virtualbox instead :(
+# fi
 
 # sudo gem install tmuxinator pry
 # sudo pip install docker-compose
