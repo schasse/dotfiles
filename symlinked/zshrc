@@ -168,6 +168,15 @@ p() {
 }
 compdef _pj p
 
+b() {
+  if [ $? -eq 0 ]; then
+    paplay /usr/share/sounds/Yaru/stereo/device-added.oga
+  else
+    paplay /usr/share/sounds/Yaru/stereo/device-removed.oga
+  fi
+}
+
+
 if [ -z "$TMUX" ]; then
   tmux
 fi
