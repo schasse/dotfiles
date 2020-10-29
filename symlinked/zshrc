@@ -27,7 +27,7 @@ alias del='rmtrash'
 
 alias -g -- clip='xclip -i -selection clipboard'
 
-alias g='hub'
+alias g='git'
 alias ci='g ci-status -v'
 alias prs='g pr list --sort-ascending -f"%sC%>(8)%i%Creset  %t%  l %U%n"'
 alias gca='git commit -a'

@@ -16,6 +16,9 @@ wget -O- https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key ad
 
 sudo add-apt-repository ppa:mmstick76/alacritty
 
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+sudo apt-add-repository https://cli.github.com/packages
+
 sudo apt-get update
 
 sudo apt-get install \
@@ -31,6 +34,7 @@ sudo apt-get install \
      exuberant-ctags \
      iotop \
      docker-ce docker-ce-cli containerd.io \
+     gh \
      git \
      google-cloud-sdk \
      iotop \
