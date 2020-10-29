@@ -28,8 +28,6 @@ alias del='rmtrash'
 alias -g -- clip='xclip -i -selection clipboard'
 
 alias g='git'
-alias ci='g ci-status -v'
-alias prs='g pr list --sort-ascending -f"%sC%>(8)%i%Creset  %t%  l %U%n"'
 alias gca='git commit -a'
 alias gy='git yolo '
 alias gcan='git commit -an'
@@ -41,26 +39,20 @@ alias gamend='git add --all && git commit --amend --no-edit'
 alias gm='GIT_MERGE_AUTOEDIT=no git merge'
 alias gr='git recent'
 alias -g -- -fl='--force-with-lease'
+
+alias ghs='gh pr status'
+alias ci='gh pr checks'
+alias prc='gh pr create'
+alias prl="gh api \"search/issues?q=is:open+is:pr+author:schasse+archived:false+NOT+GemUpdater\" | jq -r '.items[] | [.title, .url] | @json'"
+
 alias be='bundle exec '
-alias cpc='cap production rails:console'
-alias sd='script/staging_deploy'
+
 alias pg='pj gapfish/gapfish'
-alias h='nocorrect heroku'
 
 alias skd='systemctl --user start dinkube && kc config use-context admin@din'
 alias skg='systemctl --user stop dinkube && kc config use-context admin@gapfish'
 
 alias genctags='ctags-exuberant -f TAGS --extra=-f --languages=-javascript --exclude=.git --exclude=log -e -R . $(rvm gemdir)/gems/'
-
-alias m2e='mvn eclipse:clean eclipse:eclipse -DdownloadJavadocs=true'\
-  ' -DdownloadSources=true'
-alias m2i='mvn clean install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true'
-alias m2l='mvn eclipse:clean eclipse:eclipse clean package'\
-  ' -DdownloadJavadocs=true -DdownloadSources=true -Dmaven.test.skip=true'\
-  ' -Dmaven.javadoc.skip=true -Pedu'
-alias m2p='mvn clean package -Dmaven.test.skip=true -Dmaven.javadoc.skip=true'
-alias m2t='mvn test'
-alias m2a='mvn assembly:single'
 
 alias e="emacsclient --tty --alternate-editor=''"
 alias ec='emacsclient --create-frame &'
@@ -77,7 +69,6 @@ alias ds='dpkg -l | grep '
 alias hs='history | grep -i '
 
 alias dsh="SYNC_DOTFILES=1 DOTFILES='.zsh .zshrc .gitconfig .rspec .pry_history .oh-my-zsh .oh-my-zsh/custom/schasse.zsh-theme' dev shell"
-alias cds='cdg && dsh'
 
 alias -g G='| grep -n'
 alias -g L='| less -R'
@@ -175,6 +166,11 @@ b() {
     paplay /usr/share/sounds/Yaru/stereo/device-removed.oga
   fi
 }
+
+lt() {
+  du -h -d 1 $@ | sort -h -r
+}
+
 
 
 if [ -z "$TMUX" ]; then
