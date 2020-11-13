@@ -21,9 +21,10 @@
 (prelude-require-packages
  '(git-gutter+ escreen rvm robe bundler rspec-mode ido-vertical-mode vlf
                multiple-cursors emmet-mode ag ein company build-status
-               magit-gh-pulls))
+               magit-gh-pulls flx-ido))
 ;;(require personal)
 
+(global-set-key "\C-s" 'isearch-forward)
 (ido-vertical-mode 1)
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 (global-git-gutter+-mode t)

@@ -32,6 +32,7 @@ sudo apt-get install \
      editorconfig \
      emacs-nox \
      exuberant-ctags \
+     fdclone \
      iotop \
      docker-ce docker-ce-cli containerd.io \
      gh \
