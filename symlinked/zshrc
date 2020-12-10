@@ -40,11 +40,12 @@ alias gm='GIT_MERGE_AUTOEDIT=no git merge'
 alias gr='git recent'
 alias -g -- -fl='--force-with-lease'
 
-alias ghs='gh pr status'
 alias ci='g ci-status -v'
 #alias ci='gh pr checks'
 alias prc='gh pr create'
+alias prs='gh pr status'
 alias prl="gh api \"search/issues?q=is:open+is:pr+author:schasse+archived:false+NOT+GemUpdater\" | jq -r '.items[] | [.title, .url] | @json'"
+alias prv="gh pr view"
 
 alias be='bundle exec '
 
