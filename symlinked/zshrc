@@ -46,6 +46,7 @@ alias prc='gh pr create'
 alias prs='gh pr status'
 alias prl="gh api \"search/issues?q=is:open+is:pr+author:schasse+archived:false+NOT+GemUpdater\" | jq -r '.items[] | [.title, .url] | @json'"
 alias prv="gh pr view"
+alias gb="gh_browse.sh"
 
 alias be='bundle exec '
 
