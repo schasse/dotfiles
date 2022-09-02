@@ -38,11 +38,14 @@ sudo apt-get install \
      gh \
      git \
      google-cloud-sdk \
+     google-cloud-sdk-gke-gcloud-auth-plugin \
      iotop \
+     jq \
      source-highlight \
      lynx \
      nmap \
      pass \
+     pdftk \
      p7zip-full \
      pwgen \
      redshift \
@@ -70,7 +73,8 @@ sudo apt-get install \
 #        mplayer \
 #        network-manager-openconnect-gnome \
 #        dkms \
-#        vlc
+#        vlc \
+#        steam
 #   # virtualbox-5.1 installation fails, try virtualbox instead :(
 # fi
 
