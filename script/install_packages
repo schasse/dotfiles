@@ -51,6 +51,7 @@ sudo apt-get install \
      pwgen \
      redshift \
      ruby \
+     build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl libpq-dev postgresql-client \
      shellcheck \
      silversearcher-ag \
      texlive-lang-german texlive-bibtex-extra texlive-fonts-recommended texlive-font-utils \
