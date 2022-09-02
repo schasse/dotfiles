@@ -53,6 +53,7 @@ sudo apt-get install \
      ruby \
      shellcheck \
      silversearcher-ag \
+     texlive-lang-german texlive-bibtex-extra texlive-fonts-recommended texlive-font-utils \
      tmux \
      traceroute \
      trash-cli \
@@ -60,6 +61,7 @@ sudo apt-get install \
      unclutter \
      whois \
      xclip \
+     yarn \
      zsh
 
 # if there is a graphical environment
@@ -72,6 +74,7 @@ sudo apt-get install \
 #        gparted \
 #        inkscape \
 #        mplayer \
+#        mumble \
 #        network-manager-openconnect-gnome \
 #        dkms \
 #        vlc \
