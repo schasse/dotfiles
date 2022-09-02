@@ -16,7 +16,7 @@ windows:
         - "pj gapfish/gapfish && cd backoffice_operations && source <(convert_env .env) && export MONGO_HOSTS_2='[mongodb2]' && bundle exec sidekiq -C config/sidekiq_complete.yml"
         - pj prophet && gcm && ggpull && rvm use --create 2.7.0@gapfish && bundle && export $(cat ./.env | grep -v '#' | xargs) && docker-compose start postgres; bundle exec rackup config.ru -p45678
         - pj prophet && gcm && ggpull && rvm use --create 2.7.0@gapfish && bundle && export $(cat ./.env | grep -v '#' | xargs) && bundle exec sidekiq -r ./config/setup_sidekiq.rb -C ./config/sidekiq/sidekiq.yml
-        - pj login && gcm && ggpull && rvm use --create 2.7.0@gapfish && bundle && bin/rails s -p 4000
+        - pj login && gcm && ggpull && rvm use --create 2.7.3@gapfish && bundle && bin/rails s -p 4000
         - pj gapfish_user_oauth && gcm && ggpull && rvm use --create 2.5.5@gapfish && bundle && export $(cat ./.env | grep -v '#' | xargs) && bin/rails server -p 3423
   - deploy:
       layout: even-horizontal

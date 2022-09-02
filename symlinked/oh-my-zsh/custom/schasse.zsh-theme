@@ -24,7 +24,8 @@ k8s_prompt_info() {
 }
 
 precmd() {
-  local right="$fg[yellow]$(rvm-prompt v p g)$reset_color $(k8s_prompt_info) [$(date '+%H:%M')]"
+  # local right="$fg[yellow]$(rvm-prompt v p g)$reset_color $(k8s_prompt_info) [$(date '+%H:%M')]"
+  local right="$fg[yellow]$(rbenv version-name | tr -d '\n')$reset_color $(k8s_prompt_info) [$(date '+%H:%M')]"
   local nocolor=$(echo $right | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g")
   local width=$(($#right - $#nocolor + $COLUMNS))
   print "${(l:$width:: :)right}"
