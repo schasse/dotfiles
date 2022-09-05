@@ -10,14 +10,14 @@ windows:
   - server:
       layout: even-vertical
       panes:
-        - "pj gapfish/gapfish && cd user_and_support && for server in mongodb mysql mysql-data-warehouse redis; do docker-compose up --no-start $server; docker-compose start $server; done && source <(convert_env .env) && export MONGO_HOSTS_2='[mongodb2]' && bundle && bin/rails server"
+        - "pj gapfish/gapfish && cd user_and_support && for server in mongodb mysql mysql-data-warehouse redis; do docker compose up --no-start $server; docker compose start $server; done && source <(convert_env .env) && export MONGO_HOSTS_2='[mongodb2]' && bundle && bin/rails server"
         - "pj gapfish/gapfish && cd user_and_support && source <(convert_env .env) && export MONGO_HOSTS_2='[mongodb2]' && bundle exec sidekiq -C config/config_user_and_support/sidekiq_complete.yml"
         - "pj gapfish/gapfish && cd backoffice_operations && source <(convert_env .env) && export MONGO_HOSTS_2='[mongodb2]' ADMIN_OAUTH_SITE='http://dev.login.gapfish.com:4000' ADMIN_OAUTH_AUTHORIZE_URL='http://dev.login.gapfish.com:4000/oauth/authorize' && bundle && bin/rails server -p 3100"
         - "pj gapfish/gapfish && cd backoffice_operations && source <(convert_env .env) && export MONGO_HOSTS_2='[mongodb2]' && bundle exec sidekiq -C config/sidekiq_complete.yml"
-        - pj prophet && gcm && ggpull && rvm use --create 2.7.0@gapfish && bundle && export $(cat ./.env | grep -v '#' | xargs) && docker-compose start postgres; bundle exec rackup config.ru -p45678
-        - pj prophet && gcm && ggpull && rvm use --create 2.7.0@gapfish && bundle && export $(cat ./.env | grep -v '#' | xargs) && bundle exec sidekiq -r ./config/setup_sidekiq.rb -C ./config/sidekiq/sidekiq.yml
-        - pj login && gcm && ggpull && rvm use --create 2.7.3@gapfish && bundle && bin/rails s -p 4000
-        - pj gapfish_user_oauth && gcm && ggpull && rvm use --create 2.5.5@gapfish && bundle && export $(cat ./.env | grep -v '#' | xargs) && bin/rails server -p 3423
+        - pj prophet && gcm && ggpull && bundle && export $(cat ./.env | grep -v '#' | xargs) && docker compose start postgres; bundle exec rackup config.ru -p45678
+        - pj prophet && gcm && ggpull && bundle && export $(cat ./.env | grep -v '#' | xargs) && bundle exec sidekiq -r ./config/setup_sidekiq.rb -C ./config/sidekiq/sidekiq.yml
+        - pj login && gcm && ggpull && rbenv shell 2.7.3 && bundle && bin/rails s -p 4000
+        - pj gapfish_user_oauth && gcm && ggpull && rbenv shell 2.5.5 && bundle && export $(cat ./.env | grep -v '#' | xargs) && bin/rails server -p 3423
   - deploy:
       layout: even-horizontal
       panes:
