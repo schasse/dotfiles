@@ -2,7 +2,7 @@
 
 sudo apt-add-repository "deb http://archive.canonical.com/ubuntu $(lsb_release -sc) partner"
 
-# setup docker source
+# setup docker source (and install docker-compose-plugin)
 # setup gcloud cli
 # setup github cli
 
@@ -32,7 +32,6 @@ sudo apt-get install \
      git \
      google-cloud-sdk \
      google-cloud-sdk-gke-gcloud-auth-plugin \
-     libglib2.0-0 libxcb-shape0 libxcb-shm0 libxcb-xfixes0 libxcb-randr0 libxcb-image0 libfontconfig1 libgl1-mesa-glx libxi6 libsm6 libxrender1 libpulse0 libxcomposite1 libxslt1.1 libsqlite3-0 libxcb-keysyms1 libxcb-xtest0 \
      iotop \
      jq \
      source-highlight \
@@ -44,7 +43,6 @@ sudo apt-get install \
      pwgen \
      redshift \
      ruby \
-     build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev  libpq-dev postgresql-client \
      shellcheck \
      silversearcher-ag \
      texlive-lang-german texlive-bibtex-extra texlive-fonts-recommended texlive-font-utils \
@@ -77,4 +75,3 @@ if [[ -n "${DISPLAY}" ]]; then
 fi
 
 # sudo gem install tmuxinator pry
-# sudo pip install docker-compose
