@@ -82,10 +82,10 @@ alias -s html='xdg-open'
 alias o='xdg-open'
 
 alias d='docker '
-alias dc='docker-compose'
-alias dcr='docker-compose run --rm --service-ports'
-alias dcb='TAG=`depctl tag` docker-compose build'
-alias dcp='TAG=`depctl tag` docker-compose push'
+alias dc='docker compose'
+alias dcr='docker compose run --rm --service-ports'
+alias dcb='TAG=`depctl tag` docker compose build'
+alias dcp='TAG=`depctl tag` docker compose push'
 
 alias k=kubectl
 alias kg='k get'
