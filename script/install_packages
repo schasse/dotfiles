@@ -41,7 +41,6 @@ sudo apt-get install \
      pdftk \
      p7zip-full \
      pwgen \
-     redshift \
      ruby \
      shellcheck \
      silversearcher-ag \

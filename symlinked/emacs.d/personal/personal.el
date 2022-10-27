@@ -15,6 +15,7 @@
 (require 'prelude-emacs-lisp)
 ;; (require 'prelude-erc)
 ;; (require 'prelude-erlang)
+(require 'prelude-go)
 ;; (require 'prelude-haskell)
 (require 'prelude-helm)
 (require 'prelude-key-chord)
@@ -122,6 +123,14 @@
             (subword-mode +1)))
 ;; (add-to-list 'ac-modes 'coffee-mode)
 (setq jsx-indent-level 2)
+
+;; golang
+(add-hook 'go-mode-hook
+  (lambda ()
+    (setq-default)
+    (setq tab-width 2)
+    (setq standard-indent 2)
+    (setq indent-tabs-mode nil)))
 
 ;; sh
 (setq sh-basic-offset 2)

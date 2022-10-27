@@ -1,5 +1,5 @@
 # -*-shell-script-*-
-export PATH=$HOME/code/gapfish/k8s/bin:$HOME/code/scripts:$HOME/.cabal/bin:$HOME/code/living-in-a-box/bin:$HOME/code/gapfish/keys/bin:$HOME/.krew/bin:$PATH
+export PATH=$HOME/code/gapfish/k8s/bin:$HOME/code/scripts:$HOME/.cabal/bin:$HOME/code/living-in-a-box/bin:$HOME/code/gapfish/keys/bin:$HOME/.krew/bin:$HOME/.go/bin:$PATH
 export TERM=xterm-256color
 export PROJECT_PATHS=($HOME/code $HOME/code/gapfish)
 export EDITOR="emacsclient --tty --alternate-editor=''"
