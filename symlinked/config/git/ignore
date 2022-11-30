@@ -1,0 +1,64 @@
+# -*-gitignore-*-
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+TAGS
+.projectile
+.agignore
+.ignore
+backups/
+
+# Org-mode
+.org-id-locations
+*_archive
+
+# tmux
+tmux-client*
+
+# Environment files that may contain sensitive data
+.env
+.powenv
+
+# IntelliJ IDEA project files
+*.iml
+.idea/
+.ensime
+.ensime_cache/
+
+# python virtualenv
+.venv
+
+sidekiq_complete.yml
+
+## MacOS
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk

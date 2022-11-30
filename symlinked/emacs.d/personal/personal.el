@@ -66,6 +66,7 @@
 (setq company-transformers
       '(company-sort-by-occurrence
         company-sort-by-backend-importance))
+(delete 'company-etags company-backends)
 
 ;; keybindings
 (global-set-key [remap other-window] 'nil)

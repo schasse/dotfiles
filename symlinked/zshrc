@@ -23,7 +23,7 @@ export SAVEHIST=$HISTSIZE
 
 # aliases
 alias rm="echo \"\033[0;31mUse 'del', or the full path i.e. '/bin/rm'\" && exit 1"
-alias del='rmtrash'
+alias del='trash'
 
 alias -g -- clip='xclip -i -selection clipboard'
 
@@ -142,7 +142,7 @@ alias -g -- -ngs='--namespace gapfish-system'
 # added by travis gem
 # [ -f /home/sebastian/.travis/travis.sh ] && source /home/sebastian/.travis/travis.sh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source <(kubectl completion zsh 2>/dev/null)
 

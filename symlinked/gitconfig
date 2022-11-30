@@ -6,7 +6,6 @@
         gpgsign = true
 [core]
 	editor = emacsclient --tty --alternate-editor=''
-	excludesfile = /home/schasse/.gitignore
 [merge]
 	tool = vimdiff
 [color]
