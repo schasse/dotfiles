@@ -1,7 +1,7 @@
 # -*-shell-script-*-
-export PATH=$HOME/code/gapfish/k8s/bin:$HOME/code/scripts:$HOME/.cabal/bin:$HOME/code/living-in-a-box/bin:$HOME/code/gapfish/keys/bin:$HOME/.krew/bin:$HOME/.go/bin:$PATH
+export PATH=$HOME/code/scripts:$HOME/code/gapfish/keys/bin:$HOME/.go/bin:/usr/local/texlive/2022basic/bin/universal-darwin:$PATH
 export TERM=xterm-256color
-export PROJECT_PATHS=($HOME/code $HOME/code/gapfish)
+export PROJECT_PATHS=($HOME/code $HOME/code/gapfish $HOME/code/mewug)
 export EDITOR="emacsclient --tty --alternate-editor=''"
 export NVM_DIR=$HOME/.nvm
 export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.kube/gcloud_gke_credentials.json
