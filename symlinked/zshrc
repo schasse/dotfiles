@@ -25,7 +25,7 @@ export SAVEHIST=$HISTSIZE
 alias rm="echo \"\033[0;31mUse 'del', or the full path i.e. '/bin/rm'\" && exit 1"
 alias del='trash'
 
-alias -g -- clip='xclip -i -selection clipboard'
+alias -g -- clip='pbcopy'
 
 alias g='hub'
 alias gca='git commit -a'
@@ -51,6 +51,7 @@ alias gb="gh_browse.sh"
 alias be='bundle exec '
 
 alias pg='pj gapfish/gapfish'
+alias pm='pj mewug/mewug'
 
 alias skd='systemctl --user start dinkube && kc config use-context admin@din'
 alias skg='systemctl --user stop dinkube && kc config use-context admin@gapfish'
@@ -78,8 +79,7 @@ alias -g L='| less -R'
 alias wa='watch --color --interval 1 '
 alias dff='colordiff '
 
-alias -s html='xdg-open'
-alias o='xdg-open'
+alias o='open'
 
 alias d='docker '
 alias dc='docker compose'
@@ -133,6 +133,8 @@ alias -g -- -lm='--selector app=mongo'
 alias -g -- -lgu='--selector app=gem-updater'
 alias -g -- -ngs='--namespace gapfish-system'
 
+alias pwgen="ruby -rsecurerandom -e\"print SecureRandom.hex(10).chars.each_slice(4).map(&:join).join('-')\" | tee $(tty) | clip && printf \"\\n\""
+
 # [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 # [[ -s $HOME/.jenv/bin/jenv-init.sh ]] && source $HOME/.jenv/bin/jenv-init.sh && source $HOME/.jenv/commands/completion.sh
 # [[ -s $NVM_DIR/nvm.sh ]] && source $NVM_DIR/nvm.sh
@@ -146,9 +148,9 @@ alias -g -- -ngs='--namespace gapfish-system'
 
 source <(kubectl completion zsh 2>/dev/null)
 
-export PATH=$HOME/.pyenv/bin:$PATH
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# export PATH=$HOME/.pyenv/bin:$PATH
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 p() {
   pj "$@"
@@ -184,3 +186,9 @@ fi
 # [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/opt/local/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/local/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/opt/local/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/local/google-cloud-sdk/completion.zsh.inc'; fi
