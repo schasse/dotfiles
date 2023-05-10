@@ -11,7 +11,7 @@ k8s_prompt_info() {
   local ref
   local ref2
   local sym_link_path
-  ref=$(kubectl config current-context 2>&1 > /dev/null | awk '{print $2}')
+  ref=$(cat ~/.kube/config | grep current-context | cut -f 2,2 -d ' ')
   sym_link_path=$(readlink -f $HOME/.deployer/deployer_env 2> /dev/null)
   ref2="${sym_link_path##*.}"
   if [ "$ref2" = "staging" ]; then
@@ -25,8 +25,7 @@ k8s_prompt_info() {
 
 precmd() {
   # local right="$fg[yellow]$(rvm-prompt v p g)$reset_color $(k8s_prompt_info) [$(date '+%H:%M')]"
-  # local right="$fg[yellow]$(rbenv version-name | tr -d '\n')$reset_color $(k8s_prompt_info) [$(date '+%H:%M')]"
-  local right="$fg[yellow]$(rbenv version-name | tr -d '\n')$reset_color [$(date '+%H:%M')]"
+  local right="$fg[yellow]$(rbenv version-name | tr -d '\n')$reset_color $(k8s_prompt_info) [$(date '+%H:%M')]"
   local nocolor=$(echo $right | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g")
   local width=$(($#right - $#nocolor + $COLUMNS))
   print "${(l:$width:: :)right}"
