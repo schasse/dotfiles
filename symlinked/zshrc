@@ -51,7 +51,7 @@ alias gb="gh_browse.sh"
 alias be='bundle exec '
 
 alias pg='pj gapfish/gapfish'
-alias pm='pj mewug/mewug'
+alias po='pj mewug/opinion-united'
 
 alias skd='systemctl --user start dinkube && kc config use-context admin@din'
 alias skg='systemctl --user stop dinkube && kc config use-context admin@gapfish'
@@ -133,6 +133,10 @@ alias -g -- -lm='--selector app=mongo'
 alias -g -- -lgu='--selector app=gem-updater'
 alias -g -- -ngs='--namespace gapfish-system'
 
+alias -g -- -nou='-n opinion-united'
+alias -g -- -npo='-n postgres-operator'
+alias -g -- -nob='-n observability'
+
 alias pwgen="ruby -rsecurerandom -e\"print SecureRandom.hex(10).chars.each_slice(4).map(&:join).join('-')\" | tee $(tty) | clip && printf \"\\n\""
 
 # [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -148,9 +152,9 @@ alias pwgen="ruby -rsecurerandom -e\"print SecureRandom.hex(10).chars.each_slice
 
 source <(kubectl completion zsh 2>/dev/null)
 
-# export PATH=$HOME/.pyenv/bin:$PATH
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 p() {
   pj "$@"

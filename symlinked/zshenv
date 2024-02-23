@@ -5,6 +5,7 @@ export PROJECT_PATHS=($HOME/code $HOME/code/gapfish $HOME/code/mewug)
 export EDITOR="emacsclient --tty --alternate-editor=''"
 export NVM_DIR=$HOME/.nvm
 export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.kube/gcloud_gke_credentials.json
+export CLOUDSDK_PYTHON=$HOME/.pyenv/versions/3.10.13/bin/python
 export GOPATH=$HOME/.gocode
 export PASSWORD_STORE_DIR=$HOME/code/gapfish/pass
 
