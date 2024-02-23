@@ -5,32 +5,23 @@
 
 ;;; Code:
 
-(require 'prelude-ido)
-(require 'prelude-c)
-;; (require 'prelude-clojure)
-;; (require 'prelude-coffee)
-;; (require 'prelude-common-lisp)
+(require 'prelude-vertico) ;; A powerful, yet simple, alternative to ivy
 (require 'prelude-company)
+(require 'prelude-key-chord) ;; Binds useful features to key combinations
+(require 'prelude-org)
+(require 'prelude-c)
 (require 'prelude-css)
 (require 'prelude-emacs-lisp)
-;; (require 'prelude-erc)
-;; (require 'prelude-erlang)
-(require 'prelude-go)
-;; (require 'prelude-haskell)
-(require 'prelude-helm)
-(require 'prelude-key-chord)
 (require 'prelude-js)
-(require 'prelude-latex)
-(require 'prelude-lisp)
-;; (require 'prelude-mediawiki)
-(require 'prelude-org)
-;; (require 'prelude-perl)
+;; (require 'prelude-latex)
+(require 'prelude-lisp) ;; Common setup for Lisp-like languages
+(require 'prelude-lsp) ;; Base setup for the Language Server Protocol
+(require 'prelude-perl)
 (require 'prelude-python)
 (require 'prelude-ruby)
-;; (require 'prelude-scala)
-;; (require 'prelude-scheme)
+(require 'prelude-shell)
 (require 'prelude-scss)
-(require 'prelude-web)
+(require 'prelude-web) ;; Emacs mode for web templates
 (require 'prelude-xml)
 (require 'prelude-yaml)
 
@@ -49,9 +40,8 @@
 
 ;; additional packages
 (prelude-require-packages
- '(git-gutter+ escreen rvm robe bundler rspec-mode ido-vertical-mode vlf
-               multiple-cursors emmet-mode ag ein company build-status
-               magit-gh-pulls flx-ido))
+ '(git-gutter+ escreen robe bundler rspec-mode vlf ido-vertical-mode
+               multiple-cursors emmet-mode ag ein company))
 ;;(require personal)
 
 (global-set-key "\C-s" 'isearch-forward)
