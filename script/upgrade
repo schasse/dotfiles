@@ -31,11 +31,10 @@ update_with_git() {
 }
 
 printf '\033[0;34m%s\033[0m\n' 'Upgrading system'
-sudo apt-get update
-sudo apt-get upgrade -y
+brew upgrade
 
-printf '\033[0;34m%s\033[0m\n' 'Upgrading gems'
-gem update
+# printf '\033[0;34m%s\033[0m\n' 'Upgrading gems'
+# gem update
 
 # upgrade dotfiles
 printf '\033[0;34m%s\033[0m\n' 'Upgrading schasse/dotfiles'
