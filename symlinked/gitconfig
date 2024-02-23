@@ -5,7 +5,7 @@
 [commit]
         gpgsign = true
 [core]
-	editor = emacsclient --tty --alternate-editor=''
+	editor = emacs -Q
 [merge]
 	tool = vimdiff
 [color]
