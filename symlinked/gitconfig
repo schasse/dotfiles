@@ -15,14 +15,14 @@
 [init]
 	templatedir = ~/.git_template
 [alias]
-	yolo = "!f() { message="${@:-}"; git commit -a -m\"$message ($(curl -s whatthecommit.com/index.txt))\"; }; f"
+	yolo = "!f() { message="${@:-}"; git commit -a -m\"$message ($(curl -s https://whatthecommit.com/index.txt))\"; }; f"
 	; http://stackoverflow.com/a/5188364
 	recent = !git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
         find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
         show-merge = "!sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\" ] && git show $merge'"
 [credential "https://github.com"]
 	helper = 
-	helper = !/usr/local/bin/gh auth git-credential
+	helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = 
-	helper = !/usr/local/bin/gh auth git-credential
+	helper = !/opt/homebrew/bin/gh auth git-credential
