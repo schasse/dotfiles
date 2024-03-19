@@ -29,6 +29,7 @@
 (setq prelude-guru nil)
 (blink-cursor-mode t)
 ;;(scroll-bar-mode -1)
+(menu-bar-mode -1)
 (set-display-table-slot standard-display-table 'wrap ?\ )
 ;; warn when opening files bigger than 50MB
 (setq large-file-warning-threshold 50000000)
@@ -37,18 +38,12 @@
 (setq projectile-indexing-method 'alien)
 (setq projectile-enable-caching 't)
 
-
 ;; additional packages
 (prelude-require-packages
- '(git-gutter+ escreen robe bundler rspec-mode vlf ido-vertical-mode
-               multiple-cursors emmet-mode ag ein company))
-;;(require personal)
+ '(git-gutter+ escreen vlf))
 
 (global-set-key "\C-s" 'isearch-forward)
-(ido-vertical-mode 1)
-(setq ido-vertical-define-keys 'C-n-and-C-p-only)
 (global-git-gutter+-mode t)
-;;(add-to-list 'mc/unsupported-minor-modes 'smartparens-mode)
 (add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls)
 
 ;; company (autocompletion)
@@ -57,18 +52,13 @@
       '(company-sort-by-occurrence
         company-sort-by-backend-importance))
 (delete 'company-etags company-backends)
+(setq company-tooltip-flip-when-above t)
 
 ;; keybindings
 (global-set-key [remap other-window] 'nil)
 (define-key prelude-mode-map (kbd "C-c f") 'projectile-find-file)
 (define-key prelude-mode-map (kbd "C-M-o") 'crux-smart-open-line-above)
 (define-key prelude-mode-map (kbd "C-M-j") 'crux-top-join-line)
-(define-key prelude-mode-map (kbd "C-M-e") 'er/expand-region)
-(define-key prelude-mode-map (kbd "M-/") 'company-manual-begin)
-;;(global-set-key (kbd "C-M-c C-M-c") 'mc/edit-lines)
-(global-set-key (kbd "C-M-m") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-M-r") 'mc/mark-previous-like-this)
-;;(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 ;; auto balance my windows
 (defadvice split-window-right (after restore-balanace-below activate)
@@ -76,11 +66,6 @@
 (defadvice delete-window (after restore-balance activate)
   (balance-windows))
 (setq split-height-threshold nil) ;; split windows vertically
-
-;; projectile workaround: https://github.com/bbatsov/projectile/issues/1183
-(setq projectile-mode-line
-      '(:eval (format " Projectile[%s]"
-                      (projectile-project-name))))
 
 ;; ruby
 (setq ruby-insert-encoding-magic-comment nil)
@@ -96,9 +81,6 @@
          'ruby-tools-to-symbol)
        (define-key ruby-tools-mode-map (kbd "C-c ;")
          'ruby-tools-clear-string)))
-(setq-default flycheck-disabled-checkers '(ruby-reek))
-
-;;(add-hook 'ruby-mode-hook 'robe-mode)
 
 ;; haml
 (add-hook 'haml-mode-hook
