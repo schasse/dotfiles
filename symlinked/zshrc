@@ -119,7 +119,6 @@ alias krh='k rollout history'
 alias kru='k rollout undo'
 alias kgn='k get pods'
 alias kdn='k describe pods'
-unalias kc
 
 alias -g -- -lo='--selector app=operations'
 alias -g -- -lus='--selector app=user-and-support'
