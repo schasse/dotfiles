@@ -40,7 +40,7 @@
 
 ;; additional packages
 (prelude-require-packages
- '(git-gutter+ escreen vlf))
+ '(git-gutter+ escreen vlf lsp-java))
 
 (global-set-key "\C-s" 'isearch-forward)
 (global-git-gutter+-mode t)
@@ -133,6 +133,9 @@
   (set-fill-column 90))
 (add-hook 'LaTeX-mode-hook 'latex-whitespace)
 
+;; terraform
+(add-hook 'terraform-mode 'lsp-mode)
+
 ;; nice shortcuts
 (defun projectile-escreen-ag ()
   "Run projectiles search in a new screen."
@@ -155,5 +158,12 @@
       )))
 
 (define-key prelude-mode-map (kbd "C-x t") 'write-buffer-file-to-tmux-buffer)
+
+
+;; java
+
+(require 'lsp-java)
+(add-hook 'java-mode-hook #'lsp)
+
 
 ;;; personal.el ends here
