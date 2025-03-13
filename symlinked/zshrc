@@ -119,6 +119,8 @@ alias krh='k rollout history'
 alias kru='k rollout undo'
 alias kgn='k get pods'
 alias kdn='k describe pods'
+alias kcn='k config set-context $(kubectl config current-context) --namespace'
+alias kga='k get all,cm,secret,ing'
 
 alias -g -- -lo='--selector app=operations'
 alias -g -- -lus='--selector app=user-and-support'
@@ -180,7 +182,9 @@ lt() {
   du -h -d 1 $@ | sort -h -r
 }
 
-
+sgpt() {
+  PYTHONPATH=$HOME/code/shell_gpt python -m sgpt "$@"
+}
 
 if [ -z "$TMUX" ]; then
   tmux
