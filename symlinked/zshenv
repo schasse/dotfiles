@@ -9,7 +9,7 @@ export CLOUDSDK_PYTHON=$HOME/.pyenv/versions/3.10.13/bin/python
 export GOPATH=$HOME/.gocode
 export PASSWORD_STORE_DIR=$HOME/code/gapfish/pass
 
-export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+export LESSOPEN="| /opt/homebrew/bin/src-hilite-lesspipe.sh %s"
 export LESS=" -R"
 
 export GPG_TTY=$(tty)
