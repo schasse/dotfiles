@@ -40,7 +40,7 @@
 
 ;; additional packages
 (prelude-require-packages
- '(git-gutter+ escreen vlf lsp-java))
+ '(git-gutter+ vlf lsp-java highlight-indentation))
 
 (global-set-key "\C-s" 'isearch-forward)
 (global-git-gutter+-mode t)
@@ -159,11 +159,17 @@
 
 (define-key prelude-mode-map (kbd "C-x t") 'write-buffer-file-to-tmux-buffer)
 
+(add-hook 'prog-mode-hook 'highlight-indentation-mode)
+(add-hook 'yaml-mode-hook 'highlight-indentation-mode)
 
 ;; java
 
 (require 'lsp-java)
 (add-hook 'java-mode-hook #'lsp)
 
+(add-to-list 'load-path "/Users/schasse/code/copilot.el")
+(require 'copilot)
+;; (add-hook 'prog-mode-hook 'copilot-mode)
+;; (add-to-list 'copilot-major-mode-alist '("enh-ruby" . "ruby"))
 
 ;;; personal.el ends here
