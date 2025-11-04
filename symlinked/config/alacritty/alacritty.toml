@@ -23,7 +23,8 @@ background = "0x2D2A2E"
 foreground = "0xFCFCFA"
 
 [font]
-size = 13.5
+normal = { family = "UbuntuMono Nerd Font Mono" }
+size = 16
 
 [font.offset]
 x = 0
