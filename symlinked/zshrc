@@ -50,14 +50,6 @@ alias gb="gh_browse.sh"
 
 alias be='bundle exec '
 
-alias pg='pj gapfish/gapfish'
-alias po='pj mewug/opinion-united'
-
-alias skd='systemctl --user start dinkube && kc config use-context admin@din'
-alias skg='systemctl --user stop dinkube && kc config use-context admin@gapfish'
-
-alias genctags='ctags-exuberant -f TAGS --extra=-f --languages=-javascript --exclude=.git --exclude=log -e -R . $(rvm gemdir)/gems/'
-
 alias e="emacsclient --tty --alternate-editor=''"
 alias ec='emacsclient --create-frame &'
 alias eq='emacs -nw -q'
