@@ -4,7 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME=schasse
 COMPLETION_WAITING_DOTS=true
 
-plugins=(git pj tmuxinator mvn catimg autojump docker)
+plugins=(git pj tmuxinator mvn catimg autojump docker kubectx)
 
 export UPDATE_ZSH_DAYS=1
 
@@ -111,7 +111,7 @@ alias krh='k rollout history'
 alias kru='k rollout undo'
 alias kgn='k get pods'
 alias kdn='k describe pods'
-alias kcn='k config set-context $(kubectl config current-context) --namespace'
+alias kcn='kubens'
 alias kga='k get all,cm,secret,ing'
 alias knx='kubectx'
 

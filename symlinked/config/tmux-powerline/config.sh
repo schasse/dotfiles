@@ -194,7 +194,7 @@
         # Kubernetes config context symbol colour.
         export TMUX_POWERLINE_SEG_KUBERNETES_CONTEXT_SYMBOL_COLOUR="255"
         # Separator for display mode "name_namespace"
-        TMUX_POWERLINE_SEG_KUBERNETES_CONTEXT_SEPARATOR=" "
+        TMUX_POWERLINE_SEG_KUBERNETES_CONTEXT_SEPARATOR=":"
 # }
 
 # lan_ip.sh {
