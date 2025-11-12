@@ -193,3 +193,6 @@ if [ -f '/opt/local/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/local/google-
 # The next line enables shell command completion for gcloud.
 if [ -f '/opt/local/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/local/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="/opt/homebrew/opt/mysql@8.4/bin:$PATH"
+
+# word separation
+export WORDCHARS="*?_-.[]~=/&;!#$%^(){}<>:"
