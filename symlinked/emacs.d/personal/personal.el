@@ -40,10 +40,9 @@
 
 ;; additional packages
 (prelude-require-packages
- '(git-gutter+ vlf lsp-java highlight-indentation))
+ '(vlf lsp-java highlight-indentation))
 
 (global-set-key "\C-s" 'isearch-forward)
-(global-git-gutter+-mode t)
 (add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls)
 
 ;; company (autocompletion)
