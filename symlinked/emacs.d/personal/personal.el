@@ -166,9 +166,4 @@
 (require 'lsp-java)
 (add-hook 'java-mode-hook #'lsp)
 
-(add-to-list 'load-path "/Users/schasse/code/copilot.el")
-(require 'copilot)
-;; (add-hook 'prog-mode-hook 'copilot-mode)
-;; (add-to-list 'copilot-major-mode-alist '("enh-ruby" . "ruby"))
-
 ;;; personal.el ends here
