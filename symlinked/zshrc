@@ -133,6 +133,8 @@ alias -g -- -nob='-n observability'
 
 alias pwgen="ruby -rsecurerandom -e\"print SecureRandom.hex(10).chars.each_slice(4).map(&:join).join('-')\" | tee $(tty) | clip && printf \"\\n\""
 
+alias yaegi="rlwrap --histsize 2147483647 yaegi"
+
 # [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 # [[ -s $HOME/.jenv/bin/jenv-init.sh ]] && source $HOME/.jenv/bin/jenv-init.sh && source $HOME/.jenv/commands/completion.sh
 # [[ -s $NVM_DIR/nvm.sh ]] && source $NVM_DIR/nvm.sh
