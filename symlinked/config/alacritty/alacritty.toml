@@ -291,18 +291,133 @@ key = "Z"
 mods = "Command|Shift"
 
 [[keyboard.bindings]]
-chars = "\u001Bf"
-key = "F"
+chars = "\u001B\u0001"
+key = "A"
 mods = "Command|Control"
 
 [[keyboard.bindings]]
-chars = "\u001Bb"
+chars = "\u001B\u0002"
 key = "B"
 mods = "Command|Control"
 
 [[keyboard.bindings]]
-chars = "\u001Bn"
+chars = "\u001B\u0003"
+key = "C"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u0004"
+key = "D"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u0005"
+key = "E"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u0006"
+key = "F"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u0007"
+key = "G"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u0008"
+key = "H"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u0009"
+key = "I"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u000A"
+key = "J"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u000B"
+key = "K"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u000C"
+key = "L"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u000D"
+key = "M"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u000E"
 key = "N"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u000F"
+key = "O"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u0010"
+key = "P"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u0011"
+key = "Q"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u0012"
+key = "R"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u0013"
+key = "S"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u0014"
+key = "T"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u0015"
+key = "U"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u0016"
+key = "V"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u0017"
+key = "W"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u0018"
+key = "X"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u0019"
+key = "Y"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u001A"
+key = "Z"
 mods = "Command|Control"
 
 [[keyboard.bindings]]
@@ -527,3 +642,10 @@ history = 0
 decorations = "none"
 startup_mode = "Maximized"
 title = "Terminal (Alacritty)"
+
+[cursor]
+blink_interval = 750
+
+[cursor.style]
+blinking = "Always"
+

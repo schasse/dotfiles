@@ -195,4 +195,4 @@ if [ -f '/opt/local/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/local/g
 export PATH="/opt/homebrew/opt/mysql@8.4/bin:$PATH"
 
 # word separation
-export WORDCHARS="*?_-.[]~=/&;!#$%^(){}<>:"
+export WORDCHARS="*?_-.[]~=&;!#$%^(){}<>:"
