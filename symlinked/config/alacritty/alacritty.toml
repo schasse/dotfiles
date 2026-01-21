@@ -640,7 +640,7 @@ history = 0
 
 [window]
 decorations = "none"
-startup_mode = "Maximized"
+startup_mode = "Windowed"
 title = "Terminal (Alacritty)"
 
 [cursor]
@@ -648,4 +648,3 @@ blink_interval = 750
 
 [cursor.style]
 blinking = "Always"
-
