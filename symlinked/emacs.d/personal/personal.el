@@ -166,4 +166,8 @@
 (require 'lsp-java)
 (add-hook 'java-mode-hook #'lsp)
 
-;;; personal.el ends here
+;; terraform
+(prelude-require-packages '(terraform-mode lsp-mode))
+(add-hook 'terraform-mode-hook 'lsp-mode)
+
+;;;  ends here
