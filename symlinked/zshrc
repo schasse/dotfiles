@@ -8,6 +8,10 @@ plugins=(git pj tmuxinator mvn catimg autojump docker kubectx pipenv terraform)
 
 export UPDATE_ZSH_DAYS=1
 
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
