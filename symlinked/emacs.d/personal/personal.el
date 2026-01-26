@@ -158,6 +158,19 @@
 
 (define-key prelude-mode-map (kbd "C-x t") 'write-buffer-file-to-tmux-buffer)
 
+(defun tmux-project-emacsclient ()
+  "Create a new tmux window in the project root and start emacsclient."
+  (interactive)
+  (let ((project-root (projectile-project-root)))
+    (unless project-root
+      (user-error "Not in a Projectile project"))
+    (shell-command "tmux new-window")
+    (shell-command
+     (concat "tmux send-keys " (shell-quote-argument (concat "e " project-root "\n"))))
+    ))
+
+(define-key prelude-mode-map (kbd "C-x c") 'tmux-project-emacsclient)
+
 (add-hook 'prog-mode-hook 'highlight-indentation-mode)
 (add-hook 'yaml-mode-hook 'highlight-indentation-mode)
 
