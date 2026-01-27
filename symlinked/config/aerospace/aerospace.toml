@@ -49,12 +49,32 @@ automatically-unhide-macos-hidden-apps = false
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ["1", "2", "3", "4", "A", "S"]
+persistent-workspaces = []
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 on-mode-changed = []
+
+[[on-window-detected]]
+if.app-id = 'org.alacritty'
+run = 'exec-and-forget $HOME/.config/aerospace/check_and_move.sh org.alacritty y'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = 'exec-and-forget $HOME/.config/aerospace/check_and_move.sh com.google.Chrome u'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome.app.kjgfgldnnfoeklkmfkjfagphfepbbdan' # Meet
+run = 'exec-and-forget $HOME/.config/aerospace/check_and_move.sh com.google.Chrome.app.kjgfgldnnfoeklkmfkjfagphfepbbdan i'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome.app.fmgjjmmmlfnkbppncabfkddbjimcfncm' # Gmail
+run = 'exec-and-forget $HOME/.config/aerospace/check_and_move.sh com.google.Chrome.app.fmgjjmmmlfnkbppncabfkddbjimcfncm o'
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'exec-and-forget $HOME/.config/aerospace/check_and_move.sh com.spotify.client o'
 
 # Possible values: (qwerty|dvorak|colemak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -161,7 +181,7 @@ on-mode-changed = []
     alt-w = 'workspace W'
     alt-x = 'workspace X'
     alt-y = 'workspace Y'
-    alt-z = 'workspace Z'
+    # alt-z = 'workspace Z'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
@@ -194,7 +214,7 @@ on-mode-changed = []
     alt-shift-w = ['move-node-to-workspace W', 'workspace W']
     alt-shift-x = ['move-node-to-workspace X', 'workspace X']
     alt-shift-y = ['move-node-to-workspace Y', 'workspace Y']
-    alt-shift-z = ['move-node-to-workspace Z', 'workspace Z']
+    # alt-shift-z = ['move-node-to-workspace Z', 'workspace Z']
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -203,6 +223,8 @@ on-mode-changed = []
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-semicolon = 'mode service'
+
+    alt-z = 'fullscreen'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
