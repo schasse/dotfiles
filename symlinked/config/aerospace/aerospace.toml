@@ -58,23 +58,23 @@ on-mode-changed = []
 
 [[on-window-detected]]
 if.app-id = 'org.alacritty'
-run = 'exec-and-forget $HOME/.config/aerospace/check_and_move.sh org.alacritty y'
+run = 'exec-and-forget $HOME/.config/aerospace/check_and_move.sh org.alacritty Y'
 
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
-run = 'exec-and-forget $HOME/.config/aerospace/check_and_move.sh com.google.Chrome u'
+run = 'exec-and-forget $HOME/.config/aerospace/check_and_move.sh com.google.Chrome U'
 
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome.app.kjgfgldnnfoeklkmfkjfagphfepbbdan' # Meet
-run = 'exec-and-forget $HOME/.config/aerospace/check_and_move.sh com.google.Chrome.app.kjgfgldnnfoeklkmfkjfagphfepbbdan i'
+run = 'exec-and-forget $HOME/.config/aerospace/check_and_move.sh com.google.Chrome.app.kjgfgldnnfoeklkmfkjfagphfepbbdan I'
 
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome.app.fmgjjmmmlfnkbppncabfkddbjimcfncm' # Gmail
-run = 'exec-and-forget $HOME/.config/aerospace/check_and_move.sh com.google.Chrome.app.fmgjjmmmlfnkbppncabfkddbjimcfncm o'
+run = 'exec-and-forget $HOME/.config/aerospace/check_and_move.sh com.google.Chrome.app.fmgjjmmmlfnkbppncabfkddbjimcfncm O'
 
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
-run = 'exec-and-forget $HOME/.config/aerospace/check_and_move.sh com.spotify.client o'
+run = 'exec-and-forget $HOME/.config/aerospace/check_and_move.sh com.spotify.client O'
 
 # Possible values: (qwerty|dvorak|colemak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
