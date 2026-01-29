@@ -132,9 +132,6 @@
   (set-fill-column 90))
 (add-hook 'LaTeX-mode-hook 'latex-whitespace)
 
-;; terraform
-(add-hook 'terraform-mode 'lsp-mode)
-
 ;; nice shortcuts
 (defun projectile-escreen-ag ()
   "Run projectiles search in a new screen."
@@ -171,6 +168,7 @@
 
 (define-key prelude-mode-map (kbd "C-x c") 'tmux-project-emacsclient)
 
+;; indentation highlighting
 (add-hook 'prog-mode-hook 'highlight-indentation-mode)
 (add-hook 'yaml-mode-hook 'highlight-indentation-mode)
 
