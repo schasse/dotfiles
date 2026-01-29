@@ -1,5 +1,4 @@
 #!/bin/bash
-set -ex
 
 APP_ID=$1
 TARGET_WORKSPACE=$2
