@@ -12,6 +12,7 @@
 (require 'prelude-c)
 (require 'prelude-css)
 (require 'prelude-emacs-lisp)
+(require 'prelude-go)
 (require 'prelude-js)
 ;; (require 'prelude-latex)
 (require 'prelude-lisp) ;; Common setup for Lisp-like languages
