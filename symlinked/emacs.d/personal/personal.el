@@ -112,6 +112,19 @@
 ;; html
 (setq web-mode-markup-indent-offset 2)
 
+;; makefile
+(add-hook 'makefile-mode-hook
+          (lambda ()
+            (setq tab-width 2)
+            (setq indent-line-function 'indent-relative)
+            (company-mode +1)
+            (setq-local company-backends
+                        '((company-capf
+                           company-dabbrev-code
+                           company-keywords
+                           )
+                          company-files))))
+
 ;; emmet
 (add-hook 'sgml-mode-hook 'emmet-mode)
 
