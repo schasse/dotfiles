@@ -6,11 +6,25 @@ COMPLETION_WAITING_DOTS=true
 
 plugins=(git pj tmuxinator mvn catimg autojump docker kubectx pipenv terraform)
 
-export UPDATE_ZSH_DAYS=1
+# export UPDATE_ZSH_DAYS=1
+export DISABLE_AUTO_UPDATE="true"
 
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+_topgrade_check() {
+  local stamp=~/.config/topgrade.d/topgrade_last_run
+  if [[ ! -f $stamp ]] || [[ $(find $stamp -mtime +1) ]]; then
+    echo "It's been more than 1 day since the last topgrade. Run now? [y/N]"
+    read -r answer
+    if [[ $answer == [yY] ]]; then
+      touch $stamp
+      topgrade
+    fi
+  fi
+}
+_topgrade_check
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
