@@ -26,6 +26,12 @@ _topgrade_check() {
 }
 _topgrade_check
 
+if [ -d ~/.zshrc.d ]; then
+  for f in ~/.zshrc.d/*.zsh(N); do
+    source "$f"
+  done
+fi
+
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
