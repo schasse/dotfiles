@@ -44,7 +44,6 @@
  '(vlf lsp-java highlight-indentation))
 
 (global-set-key "\C-s" 'isearch-forward)
-(add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls)
 
 ;; company (autocompletion)
 (setq company-idle-delay .1)
