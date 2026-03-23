@@ -23,13 +23,21 @@ k8s_prompt_info() {
   echo "k8s:${ref} depctl:${ref2}$reset_color"
 }
 
-precmd() {
+autoload -Uz add-zsh-hook
+
+_schasse_right_prompt() {
   # local right="$fg[yellow]$(rvm-prompt v p g)$reset_color $(k8s_prompt_info) [$(date '+%H:%M')]"
-  local right="$fg[yellow]$(rbenv version-name 2>/dev/null | tr -d '\n')$reset_color [$(date '+%H:%M')]"
-  local nocolor=$(echo $right | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g")
-  local width=$(($#right - $#nocolor + $COLUMNS))
-  print "${(l:$width:: :)right}"
+  local rbenv_version=""
+  if command -v rbenv &>/dev/null; then
+    rbenv_version=$(rbenv version-name 2>/dev/null) || rbenv_version=""
+  fi
+  local right="$fg[yellow]${rbenv_version}$reset_color [$(date '+%H:%M')]"
+  local nocolor=$(echo "$right" | sed -E "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g" 2>/dev/null) || local nocolor="$right"
+  local width=$(($#right - $#nocolor + $COLUMNS)) 2>/dev/null || local width=$COLUMNS
+  print "${(l:$width:: :)right}" 2>/dev/null
 }
+
+add-zsh-hook precmd _schasse_right_prompt
 
 local ret_status="%(?::%{$fg_bold[red]%}† )"
 PROMPT="%{$fg_bold[red]%}➜ %p %{$fg[cyan]%}$(server_name)%c \$(git_prompt_info)${ret_status}% %{$reset_color%}"

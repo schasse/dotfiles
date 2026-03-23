@@ -6,6 +6,11 @@ COMPLETION_WAITING_DOTS=true
 
 plugins=(git pj tmuxinator mvn catimg autojump docker kubectx pipenv terraform)
 
+# Disable pipenv plugin's auto-activation chpwd hook. It conflicts with
+# manual 'pipenv shell' usage: the activate/deactivate cycle clobbers
+# PROMPT, breaking the theme when cd'ing out of a pipenv project.
+zstyle ':omz:plugins:pipenv' auto-shell no
+
 # export UPDATE_ZSH_DAYS=1
 export DISABLE_AUTO_UPDATE="true"
 
