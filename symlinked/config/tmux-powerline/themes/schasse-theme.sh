@@ -146,7 +146,7 @@ if [ -z "$TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS" ]; then
                 # "now_playing green black"
                 # "cpu 240 136"
                 # "load brightblack yellow"
-                "kubernetes_context brightred black"
+                # "kubernetes_context brightred black"
                 "date_week 235 136"
                 "utc_time 235 136"
                 "tmux_mem_cpu_load"

@@ -6,6 +6,8 @@ require 'erb'
 def install_dotfiles
   install_oh_my_zsh
   install_prelude
+  install_tpm
+  install_powerlevel10k
   switch_to_zsh
   replace_all = false # this is pretty ugly
   files.each do |file|
@@ -72,7 +74,7 @@ def install_prelude
   end
 end
 
-def install_prelude
+def install_tpm
   if File.exist?(File.join(ENV['HOME'], '.tmux/plugins/tpm'))
     puts 'found ~/.tmux/plugins/tpm'
   else
@@ -82,6 +84,24 @@ def install_prelude
       puts 'installing tmux plugins'
       system %Q{mkdir -p $HOME/.tmux/plugins/tpm}
       system %Q{git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"}
+    when 'q'
+      exit
+    else
+      puts 'skipping tmux plugins'
+    end
+  end
+end
+
+def install_powerlevel10k
+  if File.exist?(File.join(ENV['HOME'], '.oh-my-zsh/custom/themes/powerlevel10k'))
+    puts 'found ~/.oh-my-zsh/custom/themes/powerlevel10k'
+  else
+    print 'install powerlevel10k to .oh-my-zsh/custom/themes/powerlevel10k? [ynq] '
+    case $stdin.gets.chomp
+    when 'y'
+      puts 'installing powerlevel10k'
+      system %Q{mkdir -p $HOME/.oh-my-zsh/custom/themes/powerlevel10k}
+      system %Q{git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$HOME/.oh-my-zsh/custom/themes/powerlevel10k"}
     when 'q'
       exit
     else
