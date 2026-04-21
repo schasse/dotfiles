@@ -31,12 +31,6 @@ _topgrade_check() {
 }
 _topgrade_check
 
-if [ -d ~/.zshrc.d ]; then
-  for f in ~/.zshrc.d/*.zsh(N); do
-    source "$f"
-  done
-fi
-
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
@@ -236,3 +230,13 @@ PERL5LIB="/Users/schasse/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5
 PERL_LOCAL_LIB_ROOT="/Users/schasse/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/Users/schasse/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/schasse/perl5"; export PERL_MM_OPT;
+
+if [ -d ~/.zshrc.d ]; then
+  for f in ~/.zshrc.d/*.zsh(N); do
+    source "$f"
+  done
+fi
+
+export FZF_CTRL_T_COMMAND=''
+export FZF_ALT_C_COMMAND=''
+eval "$(fzf --zsh)"
