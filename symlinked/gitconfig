@@ -14,6 +14,7 @@
   default = matching
 [init]
   templatedir = ~/.git_template
+  defaultBranch = main
 [alias]
   yolo = "!f() { message="${@:-}"; git commit -a -m\"$message ($(curl -s https://whatthecommit.com/index.txt))\"; }; f"
   ; http://stackoverflow.com/a/5188364
