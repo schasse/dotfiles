@@ -186,17 +186,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-p() {
-  pj "$@"
-  current_name=$(tmux display-message -p '#W')
-  if [[ $current_name != 'editor' ]]; then
-    if [[ $current_name != 'server' ]]; then
-      if [[ $current_name != 'deploy' ]]; then
-        tmux rename-window "$*"
-      fi
-    fi
-  fi
-}
+alias p=pj
 compdef _pj p
 
 b() {
