@@ -1,3 +1,16 @@
+_topgrade_check() {
+  local stamp=~/.config/topgrade.d/topgrade_last_run
+  if [[ ! -f $stamp ]] || [[ $(find $stamp -mtime +1) ]]; then
+    echo "It's been more than 1 day since the last topgrade. Run now? [y/N]"
+    read -r answer
+    if [[ $answer == [yY] ]]; then
+      touch $stamp
+      topgrade
+    fi
+  fi
+}
+_topgrade_check
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -24,19 +37,6 @@ export DISABLE_AUTO_UPDATE="true"
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
-_topgrade_check() {
-  local stamp=~/.config/topgrade.d/topgrade_last_run
-  if [[ ! -f $stamp ]] || [[ $(find $stamp -mtime +1) ]]; then
-    echo "It's been more than 1 day since the last topgrade. Run now? [y/N]"
-    read -r answer
-    if [[ $answer == [yY] ]]; then
-      touch $stamp
-      topgrade
-    fi
-  fi
-}
-_topgrade_check
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
