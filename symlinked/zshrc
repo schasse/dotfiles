@@ -23,6 +23,10 @@ ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME=powerlevel10k/powerlevel10k
 COMPLETION_WAITING_DOTS=true
+HISTFILE=$HOME/.zsh_history
+export HISTSIZE=2147483647
+export SAVEHIST=$HISTSIZE
+setopt INC_APPEND_HISTORY SHARE_HISTORY EXTENDED_HISTORY HIST_IGNORE_DUPS
 
 plugins=(git pj tmuxinator mvn catimg autojump docker kubectx pipenv terraform)
 
@@ -47,9 +51,6 @@ for dir in $PROJECT_PATHS; do
     source $dir/tools/zsh/aliases
   fi
 done
-
-export HISTSIZE=2147483647
-export SAVEHIST=$HISTSIZE
 
 # aliases
 alias rm="echo \"\033[0;31mUse 'del', or the full path i.e. '/bin/rm'\" && exit 1"
