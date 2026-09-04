@@ -167,6 +167,8 @@ alias pwgen="ruby -rsecurerandom -e\"print SecureRandom.hex(10).chars.each_slice
 alias yaegi="rlwrap --histsize 2147483647 yaegi"
 alias cod='copilot-docker'
 alias clad='claude-docker'
+alias cclad='pj claude-stuff && claude-docker'
+alias pc='pj claude-stuff'
 
 
 # [[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
