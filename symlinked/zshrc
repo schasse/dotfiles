@@ -243,3 +243,4 @@ fi
 export FZF_CTRL_T_COMMAND=''
 export FZF_ALT_C_COMMAND=''
 eval "$(fzf --zsh)"
+eval "$(direnv hook zsh)"
