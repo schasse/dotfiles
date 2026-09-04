@@ -23,10 +23,6 @@ ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME=powerlevel10k/powerlevel10k
 COMPLETION_WAITING_DOTS=true
-HISTFILE=$HOME/.zsh_history
-export HISTSIZE=2147483647
-export SAVEHIST=$HISTSIZE
-setopt INC_APPEND_HISTORY SHARE_HISTORY EXTENDED_HISTORY HIST_IGNORE_DUPS
 
 plugins=(git pj tmuxinator mvn catimg autojump docker kubectx pipenv terraform)
 
@@ -44,6 +40,10 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
+
+export HISTSIZE=2147483647
+export SAVEHIST=$HISTSIZE
+setopt INC_APPEND_HISTORY SHARE_HISTORY EXTENDED_HISTORY HIST_IGNORE_DUPS
 
 for dir in $PROJECT_PATHS; do
   if [[ -d "$dir/tools/bin" ]]; then
