@@ -5,6 +5,17 @@
 
 ;;; Code:
 
+;; Compat: prelude-scss pushes onto `flymake-allowed-file-name-masks',
+;; which was removed when flymake was rewritten (Emacs 26+).
+(defvar flymake-allowed-file-name-masks nil)
+
+;; Compat: marginalia calls (seconds-to-string secs 'expanded 'abbrev);
+;; the 3-arg signature is only in Emacs master, not the 30.x release.
+(when (and (fboundp 'seconds-to-string)
+           (eq (cdr (func-arity 'seconds-to-string)) 1))
+  (advice-add 'seconds-to-string :around
+              (lambda (orig secs &rest _) (funcall orig secs))))
+
 (require 'prelude-vertico) ;; A powerful, yet simple, alternative to ivy
 (require 'prelude-company)
 (require 'prelude-key-chord) ;; Binds useful features to key combinations
