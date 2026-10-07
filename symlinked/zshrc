@@ -1,6 +1,6 @@
 _topgrade_check() {
   local stamp=~/.config/topgrade.d/topgrade_last_run
-  if [[ ! -f $stamp ]] || [[ $(find $stamp -mtime +1) ]]; then
+  if [[ ! -f $stamp ]] || [[ $(find $stamp -mmin +1200) ]]; then
     echo "It's been more than 1 day since the last topgrade. Run now? [y/N]"
     read -r answer
     if [[ $answer == [yY] ]]; then
