@@ -1,13 +1,15 @@
-;;; personal.el --- personal configuration of prelude
+;;; personal.el --- personal configuration of prelude  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; some changes and extended configs
 
 ;;; Code:
 
-;; Compat: prelude-scss pushes onto `flymake-allowed-file-name-masks',
-;; which was removed when flymake was rewritten (Emacs 26+).
+;; Compat: scss-mode (MELPA, 2018) pushes onto `flymake-allowed-file-name-masks'
+;; and `flymake-err-line-patterns' when it loads.  Both were removed when
+;; flymake was rewritten (Emacs 26+).
 (defvar flymake-allowed-file-name-masks nil)
+(defvar flymake-err-line-patterns nil)
 
 ;; Compat: marginalia calls (seconds-to-string secs 'expanded 'abbrev);
 ;; the 3-arg signature is only in Emacs master, not the 30.x release.
@@ -27,7 +29,7 @@
 (require 'prelude-js)
 ;; (require 'prelude-latex)
 (require 'prelude-lisp) ;; Common setup for Lisp-like languages
-(require 'prelude-lsp) ;; Base setup for the Language Server Protocol
+(require 'prelude-lsp-mode) ;; Base setup for the Language Server Protocol
 (require 'prelude-perl)
 (require 'prelude-python)
 (require 'prelude-ruby)
