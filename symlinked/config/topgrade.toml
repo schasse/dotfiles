@@ -23,7 +23,7 @@
 
 # Disable specific steps - same options as the command line flag
 # disable = ["system", "emacs"]
-disable = ["containers"]
+disable = ["containers", "brew_cask"]
 
 # Ignore failures for these steps
 # ignore_failures = ["powershell"]
@@ -119,6 +119,7 @@ assume_yes = true
 # "Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
 # "Custom command using interactive shell (unix)" = "-i vim_upgrade"
 build_claude = "cd $HOME/code/dockerized-agents && make build"
+brew_cask = "brew outdated --cask -q | grep -vxE 'docker(-desktop)?' | xargs brew upgrade --cask"
 
 
 [python]
